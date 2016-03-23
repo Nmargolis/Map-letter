@@ -46,9 +46,10 @@ section {
     opacity: 0.25;
     font-size: 13px;
     /*margin-top: 1.5em;*/
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
 
 }
+
 section.active {
     opacity: 1;
 }
@@ -60,10 +61,12 @@ section:first-child {
 
 section:last-child {
     border-bottom: none;
-    margin-bottom: 200px;
+    margin-bottom: 600px;
 }
 
-
+.spacer {
+    height: 60px;
+}
 
 .job-title {
     line-height: .75em;

@@ -148,16 +148,18 @@ map.on('click', function (e) {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
-        popup.setLngLat(feature.geometry.coordinates)
-            .setHTML(feature.properties.description)
-            .addTo(map);
+        openPopup(feature);
 
-        // Set the section in the sidebar to active state
-        // setActiveSection(feature.properties.id);
+        // Scroll to the resume item in the sidebar
         var resumeItemId = '#' + feature.properties.id;
         console.log(resumeItemId);
-        $.scrollTo($(resumeItemId), 800);
+        $.scrollTo($(resumeItemId), 800, {offset: function() {
+            var topOffset = -0.20 * $(window).height();
+            console.log(topOffset);
+            return {top: topOffset};
+            }});
 
+        // To Do: Fix so this makes the right item active in the sidebar
 
     });
 });
@@ -174,8 +176,9 @@ map.on('mousemove', function (e) {
 });
 
 
+// Define waypoints to trigger flying to resume items when they appear on screen
 $('.resume-item').waypoint(function(direction) {
-
+    // console.log(direction);
     if (direction == 'down') {
         // Set current element to active
         setActive(this.element);
@@ -187,11 +190,11 @@ $('.resume-item').waypoint(function(direction) {
         // Fly to the matching marker
         fly(markerMatch);
     }}, {
-            offset: '50%'
+            offset: '21%'
 });
 
 $('.resume-item').waypoint(function(direction) {
-
+    // console.log(direction);
     if (direction == 'up') {
        // Set current element to active
        setActive(this.element);
@@ -203,9 +206,14 @@ $('.resume-item').waypoint(function(direction) {
         // Fly to the matching marker
         fly(markerMatch);
     }}, {
-            offset: '10%'
+            offset: '19%'
 });
 
+function openPopup(marker) {
+    popup.setLngLat(marker.geometry.coordinates)
+    .setHTML(marker.properties.description)
+    .addTo(map);
+}
 
 function setActive(element) {
     // Remove active class from all resume items
@@ -234,9 +242,7 @@ function fly(markerMatch) {
     });
 
     // Open the associated popup
-    popup.setLngLat(markerMatch.geometry.coordinates)
-        .setHTML(markerMatch.properties.description)
-        .addTo(map);
+    openPopup(markerMatch);
 }
 
 // console.log(waypoint);
