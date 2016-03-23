@@ -57,7 +57,7 @@ var markers = {
         "properties": {
             "title": "Bank Information Center",
             "id": "bic",
-            "marker-symbol": "marker",
+            "marker-symbol": "library",
             "description": "<div class=\"marker-title\">Bank Information Center</div><p>What I did</p>"
         }
     }, {
@@ -69,7 +69,7 @@ var markers = {
         "properties": {
             "title": "Maya Agriculture and Water Systems Research",
             "id": "belize",
-            "marker-symbol": "marker",
+            "marker-symbol": "campsite",
             "description": "<div class=\"marker-title\">Research Assistant</div><p>What I did</p>"
         }
     }, {
@@ -83,6 +83,18 @@ var markers = {
             "id": "hackbright",
             "marker-symbol": "college",
             "description": "<div class=\"marker-title\">Fellow at Hackbright Academy</div><p>I recently graduated Hackbright Academy, an intensive 12 week software engineering program. While I learned a ton by figuring things out on the job, I decided to attend Hackbright Academy to learn full stack web development to understand how to build something from the ground up. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-77.03238901390978, 38.913188059745586]
+        },
+        "properties": {
+            "title": "Mapbox",
+            "id": "mapbox",
+            "marker-symbol": "rocket",
+            "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team.</p>"
         }
     }]
 };
@@ -108,6 +120,7 @@ map.on('style.load', function () {
         "source": "markers",
         "layout": {
             "icon-image": "{marker-symbol}-15",
+            "icon-size": 2,
             "icon-allow-overlap": true
         }
     });
@@ -139,6 +152,9 @@ map.on('click', function (e) {
         popup.setLngLat(feature.geometry.coordinates)
             .setHTML(feature.properties.description)
             .addTo(map);
+
+        setActiveSection(feature.properties.id);
+
     });
 });
 
@@ -154,21 +170,15 @@ map.on('mousemove', function (e) {
 });
 
 
-function fly() {
+function fly(location) {
     // Fly to the next point on the map
-    map.flyTo({
-        center: [-77.072778, 38.907222],
-        zoom: 13.5,
-        pitch: 20
-    });
+    map.flyTo(location);
+    // console.log(location);
 
-    var feature = markers.features[0];
-    // console.log(feature);
-
-
-    popup.setLngLat(feature.geometry.coordinates)
-        .setHTML(feature.properties.description)
+    popup.setLngLat(location.center)
+        .setHTML(location.description)
         .addTo(map);
+    // console.log(popup);
 
 }
 
@@ -193,7 +203,7 @@ var activeSectionName = 'hackbright';
 function setActiveSection(sectionName) {
     if (sectionName === activeSectionName) return;
     var markerIds = getMarkerIds(markers);
-    map.flyTo(markerIds[sectionName]);
+    fly(markerIds[sectionName]);
 
     document.getElementById(sectionName).setAttribute('class', 'active');
     document.getElementById(activeSectionName).setAttribute('class', '');
@@ -214,10 +224,11 @@ function getMarkerIds(markers){
         var placeId = feature.properties.id;
         // console.log(placeId);
         markerIds[placeId] = {
-            bearing: 90,
+            // bearing: 90,
             center: feature.geometry.coordinates,
             zoom: 13.5,
-            pitch: 20
+            pitch: 20,
+            description: feature.properties.description
         };
     }
     // console.log(markerIds);

@@ -65,7 +65,9 @@ section:last-child {
 
 #fly {
     display: block;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 100;
     margin: 0 auto;
     width: 45%;
     height: 40px;
