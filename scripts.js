@@ -4,7 +4,7 @@
 mapboxgl.accessToken = 'pk.eyJ1Ijoibm1hcmdvbGlzODkiLCJhIjoiY2lnbXZlem9xMDAzdDZjbTM4a2tteXdzMSJ9.j6aj2wMzUUb8FZR1XMBiBg';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v8',
+    style: 'mapbox://styles/nmargolis89/cim3wwy0x00atcwm2i0dmga0z',
     center: [-98.613, 40],
     zoom: 3
 });
@@ -20,6 +20,7 @@ var markers = {
         },
         "properties": {
             "title": "Georgetown University",
+            "id": "georgetown",
             "marker-symbol": "college",
             "description": "<div class=\"marker-title\">Studied Science, Technology and International Affairs</div><p>Took GIS, Remote Sensing, two computer science classes, including JavaScript and C++.</p>"
         }
@@ -27,10 +28,11 @@ var markers = {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [-122.41914, 38.913188059745586]
+            "coordinates": [-122.41914, 37.77919]
         },
         "properties": {
             "title": "San Francisco City Hall",
+            "id": "mayor",
             "marker-symbol": "town-hall",
             "description": "<div class=\"marker-title\">Urban Agriculture Intern</div><p>Mapped audit of city owned land available for urban agriculture.</p>"
         }
@@ -42,8 +44,9 @@ var markers = {
         },
         "properties": {
             "title": "Robert Graham Center",
+            "id": "rgc",
             "marker-symbol": "hospital",
-            "description": "<div clas=\"marker-title\">Robert Graham Center</div><p>What I did</p>"
+            "description": "<div class=\"marker-title\">Robert Graham Center</div><p>What I did</p>"
         }
     }, {
         "type": "Feature",
@@ -53,19 +56,33 @@ var markers = {
         },
         "properties": {
             "title": "Bank Information Center",
+            "id": "bic",
             "marker-symbol": "marker",
-            "description": "<div clas=\"marker-title\">Bank Information Center</div><p>What I did</p>"
+            "description": "<div class=\"marker-title\">Bank Information Center</div><p>What I did</p>"
         }
     }, {
         "type": "Feature",
         "geometry": {
             "type": "Point",
-            "coordinates": [-88.9, 17.9]
+            "coordinates": [-88.8333, 17.8333]
         },
         "properties": {
             "title": "Maya Agriculture and Water Systems Research",
-            "marker-symbol": "wetland",
-            "description": "<div clas=\"marker-title\">Research Assistant</div><p>What I did</p>"
+            "id": "belize",
+            "marker-symbol": "marker",
+            "description": "<div class=\"marker-title\">Research Assistant</div><p>What I did</p>"
+        }
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [-122.411462, 37.788666]
+        },
+        "properties": {
+            "title": "Hackbright Academy",
+            "id": "hackbright",
+            "marker-symbol": "college",
+            "description": "<div class=\"marker-title\">Fellow at Hackbright Academy</div><p>I recently graduated Hackbright Academy, an intensive 12 week software engineering program. While I learned a ton by figuring things out on the job, I decided to attend Hackbright Academy to learn full stack web development to understand how to build something from the ground up. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>"
         }
     }]
 };
@@ -77,7 +94,10 @@ map.on('style.load', function () {
     // Add marker data as a new GeoJSON source.
     map.addSource("markers", {
         "type": "geojson",
-        "data": markers
+        "data": markers,
+    //     cluster: true,
+    //     clusterMaxZoom: 14,
+    //     clusterRadius: 50
     });
 
     // Add a layer showing the markers.
@@ -143,7 +163,7 @@ function fly() {
     });
 
     var feature = markers.features[0];
-    console.log(feature);
+    // console.log(feature);
 
 
     popup.setLngLat(feature.geometry.coordinates)
@@ -152,5 +172,55 @@ function fly() {
 
 }
 
-console.log(markers);
+// console.log(markers);
+
+
+
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var markerIds = getMarkerIds(markers);
+    var sectionNames = Object.keys(markerIds);
+    for (var i = 0; i < sectionNames.length; i++) {
+        var sectionName = sectionNames[i];
+        if (isElementOnScreen(sectionName)) {
+            setActiveSection(sectionName);
+            break;
+        }
+    }
+};
+
+var activeSectionName = 'hackbright';
+function setActiveSection(sectionName) {
+    if (sectionName === activeSectionName) return;
+    var markerIds = getMarkerIds(markers);
+    map.flyTo(markerIds[sectionName]);
+
+    document.getElementById(sectionName).setAttribute('class', 'active');
+    document.getElementById(activeSectionName).setAttribute('class', '');
+
+    activeSectionName = sectionName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+function getMarkerIds(markers){
+    var markerIds = {};
+    for (var i = 0; i < markers.features.length; i++) {
+        var feature = markers.features[i];
+        var placeId = feature.properties.id;
+        // console.log(placeId);
+        markerIds[placeId] = {
+            bearing: 90,
+            center: feature.geometry.coordinates,
+            zoom: 13.5,
+            pitch: 20
+        };
+    }
+    // console.log(markerIds);
+    return markerIds;
+}
 

@@ -4,11 +4,53 @@ body {
     padding:0; 
 }
 
-#map {
+/*#map {
     position:absolute;    
     top:0; 
     bottom:0; 
     width:100%;
+}*/
+h3 {
+    font-family: 'Averia Serif Libre', Arial;
+    font-size: 1.5em;
+}
+
+#map {
+    position: fixed;
+    width:70%;
+    top: 0;
+    bottom: 0;
+}
+#features {
+    width: 30%;
+    margin-left: 70%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+    margin-bottom: 100px;
+
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+
+.job-title {
+    line-height: .75em;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    font-family: 'Averia Serif Libre', Arial;
 }
 
 .mapboxgl-popup {
@@ -18,13 +60,14 @@ body {
 
 .marker-title {
     font-weight: 700;
+    font-family: 'Averia Serif Libre', Arial;
 }
 
 #fly {
     display: block;
     position: relative;
     margin: 0 auto;
-    width: 50%;
+    width: 45%;
     height: 40px;
     padding: 10px;
     border: none;
@@ -33,4 +76,6 @@ body {
     text-align: center;
     color: #fff;
     background: #ee8a65;
+    font-family: 'Averia Serif Libre', Arial, serif;
 }
+
