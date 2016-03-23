@@ -101,7 +101,6 @@ var markers = {
 
 
 // Add markers to map
-
 map.on('style.load', function () {
     // Add marker data as a new GeoJSON source.
     map.addSource("markers", {
@@ -153,7 +152,12 @@ map.on('click', function (e) {
             .setHTML(feature.properties.description)
             .addTo(map);
 
-        setActiveSection(feature.properties.id);
+        // Set the section in the sidebar to active state
+        // setActiveSection(feature.properties.id);
+        var resumeItemId = '#' + feature.properties.id;
+        console.log(resumeItemId);
+        $.scrollTo($(resumeItemId), 800);
+
 
     });
 });
@@ -170,68 +174,69 @@ map.on('mousemove', function (e) {
 });
 
 
-function fly(location) {
-    // Fly to the next point on the map
-    map.flyTo(location);
-    // console.log(location);
+$('.resume-item').waypoint(function(direction) {
 
-    popup.setLngLat(location.center)
-        .setHTML(location.description)
-        .addTo(map);
-    // console.log(popup);
+    if (direction == 'down') {
+        // Set current element to active
+        setActive(this.element);
 
+        // Find marker associated with this resume item
+        var markerMatch = findMatchingMarker(this.element.id);
+        // console.log(markerMatch);
+                
+        // Fly to the matching marker
+        fly(markerMatch);
+    }}, {
+            offset: '50%'
+});
+
+$('.resume-item').waypoint(function(direction) {
+
+    if (direction == 'up') {
+       // Set current element to active
+       setActive(this.element);
+
+        // Find marker associated with this resume item
+        var markerMatch = findMatchingMarker(this.element.id);
+        // console.log(markerMatch);
+                
+        // Fly to the matching marker
+        fly(markerMatch);
+    }}, {
+            offset: '10%'
+});
+
+
+function setActive(element) {
+    // Remove active class from all resume items
+    $('.resume-item').removeClass('active');
+
+    // Add active class to current resume item
+    $(element).addClass('active');
 }
 
-// console.log(markers);
-
-
-
-// On every scroll event, check which element is on screen
-window.onscroll = function() {
-    var markerIds = getMarkerIds(markers);
-    var sectionNames = Object.keys(markerIds);
-    for (var i = 0; i < sectionNames.length; i++) {
-        var sectionName = sectionNames[i];
-        if (isElementOnScreen(sectionName)) {
-            setActiveSection(sectionName);
-            break;
+function findMatchingMarker(elementId) {
+    for (var i = 0; i < markers.features.length; i++) {
+        // console.log(markers.features[i]);
+        if (markers.features[i].properties.id == elementId) {
+            var markerMatch = markers.features[i];
+            return markerMatch;
         }
     }
-};
-
-var activeSectionName = 'hackbright';
-function setActiveSection(sectionName) {
-    if (sectionName === activeSectionName) return;
-    var markerIds = getMarkerIds(markers);
-    fly(markerIds[sectionName]);
-
-    document.getElementById(sectionName).setAttribute('class', 'active');
-    document.getElementById(activeSectionName).setAttribute('class', '');
-
-    activeSectionName = sectionName;
 }
 
-function isElementOnScreen(id) {
-    var element = document.getElementById(id);
-    var bounds = element.getBoundingClientRect();
-    return bounds.top < window.innerHeight && bounds.bottom > 0;
+function fly(markerMatch) {
+    // Fly to the matching marker
+    map.flyTo({
+        center: markerMatch.geometry.coordinates,
+        zoom: 13.5,
+        pitch: 20
+    });
+
+    // Open the associated popup
+    popup.setLngLat(markerMatch.geometry.coordinates)
+        .setHTML(markerMatch.properties.description)
+        .addTo(map);
 }
 
-function getMarkerIds(markers){
-    var markerIds = {};
-    for (var i = 0; i < markers.features.length; i++) {
-        var feature = markers.features[i];
-        var placeId = feature.properties.id;
-        // console.log(placeId);
-        markerIds[placeId] = {
-            // bearing: 90,
-            center: feature.geometry.coordinates,
-            zoom: 13.5,
-            pitch: 20,
-            description: feature.properties.description
-        };
-    }
-    // console.log(markerIds);
-    return markerIds;
-}
-
+// console.log(waypoint);

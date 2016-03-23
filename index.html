@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <title>Natalia Margolis</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="vendor/waypoints/jquery.waypoints.min.js" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
         <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
         <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
         <link href='https://fonts.googleapis.com/css?family=Special+Elite|Averia+Serif+Libre:400,700' rel='stylesheet' type='text/css'>
@@ -16,14 +19,22 @@
         <!-- <button id='fly'>Fly</button> -->
         </div>
 
-        <div id='features'>
-            <section id='hackbright' class='active'>
+        <!-- <div id='resume-container'> -->
+            <!-- <div id='resume-header'> -->
+                <!-- <h2>Resume</h2> -->
+            <!-- </div> -->
+            <div id='features'>
+            <section id='resume-intro'>
+                <h2>Resume</h2>
+                <p>Scroll to explore</p>
+            </section>    
+            <section id='hackbright' class='resume-item active'>
                 <h3>Hackbright Academy</h3>
                 <p class="job-title">Software Engineering Fellow</p>
                 <p>At Hackbright Academy I studied full stack web development. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>
             </section>
-            <div class='spacer'></div>
-            <section id='bic'>
+<!--             <div class='spacer'></div> -->
+            <section id='bic' class='resume-item'>
                 <h3>Bank Information Center</h3>
                 <p class="job-title">Information Services Coordinator</p>
 <!--                 <ul>
@@ -34,33 +45,33 @@
                 </ul> -->
                 <p>At the Bank Information Center, a World Bank watchdog, I learned how to manage the website and the office IT infrastructure on the job, with very little training. I maintained and updated the website, ensuring the Wordpress plugins and theme were up to date and compatible with Wordpress security patches. Managing the website also involved everything from formatting pages with html/css, to implementing custom scripts to work with a plugin for interactive SVG maps, to editing the PHP files to allow for multilingual content.</p>
             </section>
-            <section id='rgc'>
+            <section id='rgc' class='resume-item'>
                 <h3>Robert Graham Center</h3>
                 <p class="job-title">Research Assistant</p>
                 <p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography to contribute to a study on redefining the concept and measures of geographic access to health care. On my own initiative, I facilitated the migration of an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for ensuring a cleaner database in the future.</p>
             </section>
-            <section id='belize'>
+            <section id='belize' class='resume-item'>
                 <h3>Belize</h3>
                 <p class="job-title">Ancient Maya Geoarcheology Research Assistant</p>
                 <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
             </section>
-            <section id='mayor'>
+            <section id='mayor' class='resume-item'>
                 <h3>San Francisco Mayor's Office</h3>
                 <p class="job-title">Urban Agriculture Intern</p>
                 <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
             </section>
-            <section id='georgetown'>
+            <section id='georgetown' class='resume-item'>
                 <h3>Georgetown University</h3>
                 <p class="job-title">Science, Technology and International Afairs</p>
                 <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
             </section>
-            <section id='mapbox'>
+            <section id='mapbox' class='resume-item'>
                 <h3>Mapbox</h3>
                 <p class="job-title">Map Data Engineer</p>
                 <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
             </section>                   
-
-        </div>
+            </div>
+        <!-- </div> -->
 
 
 
