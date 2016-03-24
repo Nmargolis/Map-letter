@@ -150,14 +150,11 @@ map.on('click', function (e) {
         // based on the feature found.
         openPopup(feature);
 
+        // Fly to feature
+        fly(feature);
+
         // Scroll to the resume item in the sidebar
-        var resumeItemId = '#' + feature.properties.id;
-        console.log(resumeItemId);
-        $.scrollTo($(resumeItemId), 800, {offset: function() {
-            var topOffset = -0.20 * $(window).height();
-            console.log(topOffset);
-            return {top: topOffset};
-            }});
+        scrollToFeature(feature);
 
         // To Do: Fix so this makes the right item active in the sidebar
 
@@ -177,11 +174,13 @@ map.on('mousemove', function (e) {
 
 
 // Define waypoints to trigger flying to resume items when they appear on screen
-$('.resume-item').waypoint(function(direction) {
+var waypointsDown = $('.resume-item').waypoint(function(direction) {
     // console.log(direction);
     if (direction == 'down') {
         // Set current element to active
         setActive(this.element);
+
+        console.log("WAPOINTING DOWN");
 
         // Find marker associated with this resume item
         var markerMatch = findMatchingMarker(this.element.id);
@@ -193,11 +192,13 @@ $('.resume-item').waypoint(function(direction) {
             offset: '21%'
 });
 
-$('.resume-item').waypoint(function(direction) {
+var waypointsUp = $('.resume-item').waypoint(function(direction) {
     // console.log(direction);
     if (direction == 'up') {
        // Set current element to active
        setActive(this.element);
+
+       console.log("WAPOINTING UP");
 
         // Find marker associated with this resume item
         var markerMatch = findMatchingMarker(this.element.id);
@@ -205,9 +206,44 @@ $('.resume-item').waypoint(function(direction) {
                 
         // Fly to the matching marker
         fly(markerMatch);
+
+        // TODO: Put in timout to avoid premature flying
     }}, {
             offset: '19%'
 });
+
+
+function scrollToFeature(feature) {
+
+    // Disable waypoints to prevent conflicting flying
+    Waypoint.disableAll();
+
+    window.setTimeout(function(){
+        Waypoint.enableAll();
+    }, 700);
+
+    var resumeItemId = '#' + feature.properties.id;
+        // console.log(resumeItemId);
+    $.scrollTo($(resumeItemId), 800, {
+        offset: function() {
+            var topOffset = -0.20 * $(window).height();
+            // console.log(topOffset);
+            return {top: topOffset};
+        },
+        onAfter: function() {
+            console.log('done');
+            callback();
+            console.log('done2');
+        }
+    });
+
+   
+}
+
+function callback(){
+    console.log('callback');
+    Waypoint.enableAll();
+}
 
 function openPopup(marker) {
     popup.setLngLat(marker.geometry.coordinates)

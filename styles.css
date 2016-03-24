@@ -39,7 +39,7 @@ h3 {
     overflow-y: scroll;
     background-color: #fafafa;
 }
-section {
+.resume-item {
     padding:  25px 50px;
     line-height: 25px;
     border-bottom: 1px solid #ddd;
@@ -48,18 +48,25 @@ section {
     /*margin-top: 1.5em;*/
     /*margin-bottom: 50px;*/
 
+ /*transition opacity, for .5 seconds, with easing style ease-in-out*/
+    transition:all .3s ease-in-out;
+
+    transform:scale(.9);
+
 }
 
-section.active {
+.resume-item.active {
     opacity: 1;
+
+    transform:scale(1);
 }
 
-section:first-child {
+.resume-item:first-child {
     opacity: 1;
     margin-bottom: 0;
 }
 
-section:last-child {
+.resume-item:last-child {
     border-bottom: none;
     margin-bottom: 600px;
 }
