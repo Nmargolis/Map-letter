@@ -134,28 +134,63 @@ map.on('style.load', function () {
     map.addSource("markers", {
         "type": "geojson",
         "data": markers,
-    //     cluster: true,
-    //     clusterMaxZoom: 14,
-    //     clusterRadius: 50
+        cluster: true,
+        clusterMaxZoom: 14,
+        clusterRadius: 50
     });
 
-    // Add a layer showing the markers.
+
+    // Display the marker data in two layers, each filtered to a range of
+    // count values. Each range gets a different fill color.
+    var layers = [
+        [2, '#f1f075'],
+        [0, '#fff']
+    ];
+
+    layers.forEach(function (layer, i) {
+        map.addLayer({
+            "id": "cluster-" + i,
+            "type": "circle",
+            "source": "markers",
+            "paint": {
+                "circle-color": layer[1],
+                "circle-radius": 18
+            },
+            "filter": i === 0 ?
+                [">=", "point_count", layer[0]] :
+                ["all",
+                    [">=", "point_count", layer[0]],
+                    ["<", "point_count", layers[i - 1][0]]]
+        });
+    });
+
+    // Add a layer for the clusters' count labels
     map.addLayer({
         "id": "markers",
         "interactive": true,
         "type": "symbol",
         "source": "markers",
         "layout": {
+            "text-field": "{point_count}",
+            "text-font": [
+                    "DIN Offc Pro Medium",
+                    "Arial Unicode MS Bold"
+                ],
+            "text-size": 12,
             "icon-image": "{marker-symbol}-15",
             "icon-size": 2,
             "icon-allow-overlap": true
+
         }
     });
+
+
 });
+
 
 // Create popups
 
-var popup = new mapboxgl.Popup();
+var popup = new mapboxgl.Popup({closeButton: false});
 
 // When a click event occurs near a marker icon, open a popup at the location of
 // the feature, with description HTML from its properties.
@@ -176,6 +211,7 @@ map.on('click', function (e) {
 
         // Populate the popup and set its coordinates
         // based on the feature found.
+        // console.log(feature);
         openPopup(feature);
 
         // Fly to feature
@@ -224,6 +260,8 @@ $(document).on('click', '.nextButton', function(evt) {
     scrollToFeature(nextStop);
     currentTourStop++;
 });
+
+//TODO: Set current position when 
 
 
 // Define waypoints to trigger flying to resume items when they appear on screen
@@ -295,9 +333,12 @@ function scrollToFeature(feature) {
 
 
 function openPopup(marker) {
+    if (!marker.properties.cluster) {
+
     popup.setLngLat(marker.geometry.coordinates)
     .setHTML(marker.properties.description)
     .addTo(map);
+    }
 }
 
 function setActive(element) {
@@ -341,16 +382,3 @@ function fly(markerMatch) {
 }
 
 // console.log(waypoint);
-
-
-
-// Put gif into Null Island
-// _gif_artist = "chavesfelipe";
-// _gif_artist_avatar = "https://media1.giphy.com/avatars/chavesfelipe/4HOJVezd7jN8.JPG";
-// var _giphy = _giphy || [];
-// _giphy.push({id: "l41lZnmywO0AT9S24",w: 360, h: 360});
-// var g = document.createElement("script");
-// g.type = "text/javascript";
-// g.async = true;
-// g.src = ("https:" == document.location.protocol ? "https://" : "http://") + "giphy.com/static/js/widgets/embed.js";
-// var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);
