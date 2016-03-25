@@ -128,8 +128,9 @@ h3 {
     display: block;
     position: fixed;
     top: 0;
+    right: 0;
     z-index: 100;
-    margin: 0 auto;
+    margin: 10px;
     /*width: 45%;*/
     height: 40px;
     padding: 10px;

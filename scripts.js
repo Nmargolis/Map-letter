@@ -1,4 +1,10 @@
-
+$(document).ready( function () {
+    var msg = ' _   _  ____  ____  ____    __  __  ____    ____  __    ____ \r\n' +
+            '( )_( )(_  _)(  _ \\( ___)  (  \\/  )( ___)  (  _ \\(  )  (_   )\r\n' +
+            ' ) _ (  _)(_  )   / )__)    )    (  )__)    )___/ )(__  / /_ \r\n' +
+            '(_) (_)(____)(_)\\_)(____)  (_/\\/\\_)(____)  (__)  (____)(____)\r\n';
+    console.log(msg);
+});
 
 // Initialize map
 mapboxgl.accessToken = 'pk.eyJ1Ijoibm1hcmdvbGlzODkiLCJhIjoiY2lnbXZlem9xMDAzdDZjbTM4a2tteXdzMSJ9.j6aj2wMzUUb8FZR1XMBiBg';
@@ -24,7 +30,7 @@ var markers = {
             "tourstop": 1,
             "marker-symbol": "college",
             "description": "<div class=\"marker-title\">Studied Science, Technology and International Affairs</div><p>Took GIS, Remote Sensing, two computer science classes, including JavaScript and C++.</p>" +
-                "<button type=\"button\" class=\"nextButton\">Next</button>"
+                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -38,7 +44,7 @@ var markers = {
             "tourstop": 2,
             "marker-symbol": "town-hall",
             "description": "<div class=\"marker-title\">Urban Agriculture Intern</div><p>Mapped audit of city owned land available for urban agriculture.</p>" +
-                 "<button type=\"button\" class=\"nextButton\">Next</button>"
+                 "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -52,7 +58,7 @@ var markers = {
             "tourstop": 4,
             "marker-symbol": "hospital",
             "description": "<div class=\"marker-title\">Robert Graham Center</div><p>What I did</p>" +
-                "<button type=\"button\" class=\"nextButton\">Next</button>"
+                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -66,7 +72,7 @@ var markers = {
             "tourstop": 5,
             "marker-symbol": "library",
             "description": "<div class=\"marker-title\">Bank Information Center</div><p>What I did</p>" +
-                "<button type=\"button\" class=\"nextButton\">Next</button>"
+                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -80,7 +86,7 @@ var markers = {
             "tourstop": 3,
             "marker-symbol": "campsite",
             "description": "<div class=\"marker-title\">Research Assistant</div><p>What I did</p>" +
-                "<button type=\"button\" class=\"nextButton\">Next</button>"
+                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -94,7 +100,7 @@ var markers = {
             "tourstop": 6,
             "marker-symbol": "college",
             "description": "<div class=\"marker-title\">Fellow at Hackbright Academy</div><p>I recently graduated Hackbright Academy, an intensive 12 week software engineering program. While I learned a ton by figuring things out on the job, I decided to attend Hackbright Academy to learn full stack web development to understand how to build something from the ground up. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>" +
-                "<button type=\"button\" class=\"nextButton\">Next</button>"
+                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -107,7 +113,8 @@ var markers = {
             "id": "mapbox",
             "tourstop": 8,
             "marker-symbol": "rocket",
-            "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team.</p>"
+            "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team.</p>" +
+                "<button type=\"button\" class=\"previousButton\">Previous</button>"
         }
     }, {
         "type": "Feature",
@@ -121,7 +128,7 @@ var markers = {
             "tourstop": 7,
             "marker-symbol": "danger",
             "description": "<div class=\"marker-title\">Null Island</div><p>I love tackling complex problems in code... sometimes you face challenges and don't get the results you want... but then you learn something new. <br> <img src=\"fail.gif\" alt=\"Computer fail\" style=\"width:320px;height:320px;\"></p>" +
-                "<button type=\"button\" class=\"nextButton\">Next</button>"
+                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     },
     ]
@@ -142,6 +149,7 @@ map.on('style.load', function () {
 
     // Display the marker data in two layers, each filtered to a range of
     // count values. Each range gets a different fill color.
+    // TODO: Show point_count for 1
     var layers = [
         [2, '#f1f075'],
         [0, '#fff']
@@ -173,7 +181,7 @@ map.on('style.load', function () {
         "layout": {
             "text-field": "{point_count}",
             "text-font": [
-                    "DIN Offc Pro Medium",
+                    "Elementa Pro Bold",
                     "Arial Unicode MS Bold"
                 ],
             "text-size": 12,
@@ -183,7 +191,6 @@ map.on('style.load', function () {
 
         }
     });
-
 
 });
 
@@ -252,16 +259,47 @@ $('.showResumeButton').on('click', function(){
 });
 
 // Use event delegation to bind click event to buttons that haven't been created yet
-$(document).on('click', '.nextButton', function(evt) {
+$(document).on('click', '.nextButton', function() {
     console.log('Next stop: ' + (currentTourStop + 1));
     var nextStop = findNextTourStop(currentTourStop + 1);
     console.log(nextStop);
     fly(nextStop);
     scrollToFeature(nextStop);
     currentTourStop++;
+
 });
 
-//TODO: Set current position when 
+$(document).on('click', '.previousButton', function() {
+    console.log('Previous stop: ' + (currentTourStop - 1));
+
+    // If the previous stop is the welcome window
+    if (currentTourStop - 1 === 0) {
+        // Close the current popup
+        popup.remove();
+
+        // Zoom out to the original map zoom level and center
+        map.flyTo({
+            center: [-98.613, 40],
+            zoom: 3
+        });
+
+        // Show the welcome window
+        $('#welcome').show();
+
+    }
+    else {
+        var previousStop = findNextTourStop(currentTourStop - 1);
+        fly(previousStop);
+        scrollToFeature(previousStop);
+        currentTourStop--;
+    }
+
+});
+
+// Hide welcome window when it's next button is clicked
+$('#startTourButton').on('click', function() {
+    $('#welcome').hide();
+});
 
 
 // Define waypoints to trigger flying to resume items when they appear on screen
@@ -382,3 +420,7 @@ function fly(markerMatch) {
 }
 
 // console.log(waypoint);
+
+
+
+
