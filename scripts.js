@@ -21,8 +21,10 @@ var markers = {
         "properties": {
             "title": "Georgetown University",
             "id": "georgetown",
+            "tourstop": 1,
             "marker-symbol": "college",
-            "description": "<div class=\"marker-title\">Studied Science, Technology and International Affairs</div><p>Took GIS, Remote Sensing, two computer science classes, including JavaScript and C++.</p>"
+            "description": "<div class=\"marker-title\">Studied Science, Technology and International Affairs</div><p>Took GIS, Remote Sensing, two computer science classes, including JavaScript and C++.</p>" +
+                "<button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -33,8 +35,10 @@ var markers = {
         "properties": {
             "title": "San Francisco City Hall",
             "id": "mayor",
+            "tourstop": 2,
             "marker-symbol": "town-hall",
-            "description": "<div class=\"marker-title\">Urban Agriculture Intern</div><p>Mapped audit of city owned land available for urban agriculture.</p>"
+            "description": "<div class=\"marker-title\">Urban Agriculture Intern</div><p>Mapped audit of city owned land available for urban agriculture.</p>" +
+                 "<button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -45,8 +49,10 @@ var markers = {
         "properties": {
             "title": "Robert Graham Center",
             "id": "rgc",
+            "tourstop": 4,
             "marker-symbol": "hospital",
-            "description": "<div class=\"marker-title\">Robert Graham Center</div><p>What I did</p>"
+            "description": "<div class=\"marker-title\">Robert Graham Center</div><p>What I did</p>" +
+                "<button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -57,8 +63,10 @@ var markers = {
         "properties": {
             "title": "Bank Information Center",
             "id": "bic",
+            "tourstop": 5,
             "marker-symbol": "library",
-            "description": "<div class=\"marker-title\">Bank Information Center</div><p>What I did</p>"
+            "description": "<div class=\"marker-title\">Bank Information Center</div><p>What I did</p>" +
+                "<button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -69,8 +77,10 @@ var markers = {
         "properties": {
             "title": "Maya Agriculture and Water Systems Research",
             "id": "belize",
+            "tourstop": 3,
             "marker-symbol": "campsite",
-            "description": "<div class=\"marker-title\">Research Assistant</div><p>What I did</p>"
+            "description": "<div class=\"marker-title\">Research Assistant</div><p>What I did</p>" +
+                "<button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -81,8 +91,10 @@ var markers = {
         "properties": {
             "title": "Hackbright Academy",
             "id": "hackbright",
+            "tourstop": 6,
             "marker-symbol": "college",
-            "description": "<div class=\"marker-title\">Fellow at Hackbright Academy</div><p>I recently graduated Hackbright Academy, an intensive 12 week software engineering program. While I learned a ton by figuring things out on the job, I decided to attend Hackbright Academy to learn full stack web development to understand how to build something from the ground up. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>"
+            "description": "<div class=\"marker-title\">Fellow at Hackbright Academy</div><p>I recently graduated Hackbright Academy, an intensive 12 week software engineering program. While I learned a ton by figuring things out on the job, I decided to attend Hackbright Academy to learn full stack web development to understand how to build something from the ground up. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>" +
+                "<button type=\"button\" class=\"nextButton\">Next</button>"
         }
     }, {
         "type": "Feature",
@@ -93,10 +105,26 @@ var markers = {
         "properties": {
             "title": "Mapbox",
             "id": "mapbox",
+            "tourstop": 8,
             "marker-symbol": "rocket",
             "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team. I would be a valuable addition to the Mapbox team.</p>"
         }
-    }]
+    }, {
+        "type": "Feature",
+        "geometry": {
+            "type": "Point",
+            "coordinates": [0, 0]
+        },
+        "properties": {
+            "title": "Null Island",
+            "id": "null-island",
+            "tourstop": 7,
+            "marker-symbol": "danger",
+            "description": "<div class=\"marker-title\">Null Island</div><p>I love tackling complex problems in code... sometimes you face challenges and don't get the results you want... but then you learn something new. <br> <img src=\"fail.gif\" alt=\"Computer fail\" style=\"width:320px;height:320px;\"></p>" +
+                "<button type=\"button\" class=\"nextButton\">Next</button>"
+        }
+    },
+    ]
 };
 
 
@@ -173,6 +201,31 @@ map.on('mousemove', function (e) {
 });
 
 
+var resumeMode = false;
+
+var currentTourStop = 0;
+
+// Click handler for showing the resume
+$('.showResumeButton').on('click', function(){
+
+    resumeMode = !resumeMode;
+    console.log(resumeMode);
+
+    $('#features').toggleClass('visible');
+    Waypoint.refreshAll();
+});
+
+// Use event delegation to bind click event to buttons that haven't been created yet
+$(document).on('click', '.nextButton', function(evt) {
+    console.log('Next stop: ' + (currentTourStop + 1));
+    var nextStop = findNextTourStop(currentTourStop + 1);
+    console.log(nextStop);
+    fly(nextStop);
+    scrollToFeature(nextStop);
+    currentTourStop++;
+});
+
+
 // Define waypoints to trigger flying to resume items when they appear on screen
 var waypointsDown = $('.resume-item').waypoint(function(direction) {
     // console.log(direction);
@@ -189,7 +242,8 @@ var waypointsDown = $('.resume-item').waypoint(function(direction) {
         // Fly to the matching marker
         fly(markerMatch);
     }}, {
-            offset: '21%'
+            offset: '21%',
+            context: $('#features')
 });
 
 var waypointsUp = $('.resume-item').waypoint(function(direction) {
@@ -209,7 +263,8 @@ var waypointsUp = $('.resume-item').waypoint(function(direction) {
 
         // TODO: Put in timout to avoid premature flying
     }}, {
-            offset: '19%'
+            offset: '19%',
+            context: $('#features')
 });
 
 
@@ -224,26 +279,20 @@ function scrollToFeature(feature) {
 
     var resumeItemId = '#' + feature.properties.id;
         // console.log(resumeItemId);
-    $.scrollTo($(resumeItemId), 800, {
+    $('#features').scrollTo($(resumeItemId), 800, {
         offset: function() {
             var topOffset = -0.20 * $(window).height();
             // console.log(topOffset);
             return {top: topOffset};
         },
         onAfter: function() {
-            console.log('done');
-            callback();
-            console.log('done2');
+            //fires after scrolling finishes
         }
     });
 
    
 }
 
-function callback(){
-    console.log('callback');
-    Waypoint.enableAll();
-}
 
 function openPopup(marker) {
     popup.setLngLat(marker.geometry.coordinates)
@@ -269,6 +318,16 @@ function findMatchingMarker(elementId) {
     }
 }
 
+function findNextTourStop(tourStopId) {
+    for (var i = 0; i < markers.features.length; i++) {
+        if (markers.features[i].properties.tourstop == tourStopId) {
+            var markerMatch = markers.features[i];
+            console.log('marker match: ' + markerMatch);
+            return markerMatch;
+        }
+    }
+}
+
 function fly(markerMatch) {
     // Fly to the matching marker
     map.flyTo({
@@ -282,3 +341,16 @@ function fly(markerMatch) {
 }
 
 // console.log(waypoint);
+
+
+
+// Put gif into Null Island
+// _gif_artist = "chavesfelipe";
+// _gif_artist_avatar = "https://media1.giphy.com/avatars/chavesfelipe/4HOJVezd7jN8.JPG";
+// var _giphy = _giphy || [];
+// _giphy.push({id: "l41lZnmywO0AT9S24",w: 360, h: 360});
+// var g = document.createElement("script");
+// g.type = "text/javascript";
+// g.async = true;
+// g.src = ("https:" == document.location.protocol ? "https://" : "http://") + "giphy.com/static/js/widgets/embed.js";
+// var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);
