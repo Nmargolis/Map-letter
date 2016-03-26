@@ -1,9 +1,59 @@
 $(document).ready( function () {
-    var msg = ' _   _  ____  ____  ____    __  __  ____    ____  __    ____ \r\n' +
-            '( )_( )(_  _)(  _ \\( ___)  (  \\/  )( ___)  (  _ \\(  )  (_   )\r\n' +
-            ' ) _ (  _)(_  )   / )__)    )    (  )__)    )___/ )(__  / /_ \r\n' +
-            '(_) (_)(____)(_)\\_)(____)  (_/\\/\\_)(____)  (__)  (____)(____)\r\n';
-    console.log(msg);
+
+    // Scroll to top of page to avoid starting in the middle from browser caching
+    $('body').scrollTop(0);
+    $('#features').scrollTop(0);
+
+    // start with Waypoints disabled
+    Waypoint.disableAll();
+    
+    // console.log(resumeMode);
+
+    // Easter egg
+    var msg = "                                        ,,,,   \r\n" +
+            "                                  ,,            ,,           \r\n" +
+            "                                ,                  ,         \r\n" +
+            "                              ,                      ,       \r\n" +
+            "                            ,,                       ,,      \r\n" +
+            "                           ,                           ,     \r\n" +
+            "                          ,,                           ,,    \r\n" +
+            "                         ,                               ,   \r\n" +
+            "                        ,,                               ,,  \r\n" +
+            "                        ,                                 ,  \r\n" +
+            "                        ,                                 ,  \r\n" +
+            "                        ,                                 ,  \r\n" +
+            "                        ,,                               ,,  \r\n" +
+            "                         ,,                             ,,   \r\n" +
+            "                          ,,                           ,,    \r\n" +
+            "                           ,,                         ,,     \r\n" +
+            "                            ,,,                     ,,,      \r\n" +
+            "                       ,,=,,,,,,,,                ,,,,,,     \r\n" +
+            "                    ,,,,,,,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,     \r\n" +
+            "                  ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~    \r\n" +
+            "                 ,,,,,=,,,:,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~   \r\n" +
+            "                ,,:,,,,=,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
+            "               ,,,,,,,,,   :,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
+            "              ,,,,,,,,     =,,:::::::::,,,,,,,,,,,,,,,,,~~~  \r\n" +
+            "              ,,,,==,      =::::::::::::::,,,,,,,,,,,,,,~~~  \r\n" +
+            "              ,,,,,,,     =:::::::::::::::::,,,,,,,,,,,,~~~  \r\n" +
+            "              ,,,,,,,   ==:::::::::::::::::::,,,,,,,,,,,~~~  \r\n" +
+            "              :,,,,,,,  ==:::::::?IIIII77777III,,,,,,,,,~~~  \r\n" +
+            "              ::,,,,,,,==:::::?I$$$$$$$$$$$$$$$,,,,,,,,,~~~  \r\n" +
+            "               :,,,,,,,,,:::::I$$$$$$$$$$$$$$$$,,,,,,,,,~~~  \r\n" +
+            "                ~:,,,,,,,,I?++I$$$$$$$$$$$$$$$$,,,,,,,,,~~~  \r\n" +
+            "                 ::,,,,,,II++++++$$$$$$$$$$$$$$~,,,,,,,,~~~  \r\n" +
+            "                   ::,,,,I++++++++$$$$$$$$$$$$$,,,,,,,,,~~~  \r\n" +
+            "                      ::~I++++++++$$$$$$$$$$$$$,,,,,,,,,===  \r\n" +
+            "                       ==I+++++++$$$$$$$$$$$$$,,,,,,,,,,~~~  \r\n" +
+            "                        ====:::::IIIIIIIIIII~,,,,,,,,,,,~~~  \r\n" +
+            "                         ====:::::::::::::::,,,,,,,,,,,,~~~  \r\n" +
+            "                           ===:::::::::::::,,,,,,,,,,,,,~~~  \r\n" +
+            "                           =IIII+::::~IIII,,,,,,,,,,,,,,~~~  \r\n" +
+            "                           ,======,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
+            "                           ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
+            "                           ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
+            "                           ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~~  " ;
+    // console.log(msg);
 });
 
 // Initialize map
@@ -244,28 +294,37 @@ map.on('mousemove', function (e) {
 });
 
 
-var resumeMode = false;
-
+var resumeMode = true;
 var currentTourStop = 0;
 
 // Click handler for showing the resume
-$('.showResumeButton').on('click', function(){
+// $('.showResumeButton').on('click', function(){
 
-    resumeMode = !resumeMode;
-    console.log(resumeMode);
+//     resumeMode = !resumeMode;
+//     console.log(resumeMode);
 
-    $('#features').toggleClass('visible');
-    Waypoint.refreshAll();
-});
+//     $('#features').toggleClass('visible');
+//     Waypoint.refreshAll();
+// });
 
+
+// Go to next tour stop when next button is clicked
 // Use event delegation to bind click event to buttons that haven't been created yet
 $(document).on('click', '.nextButton', function() {
     console.log('Next stop: ' + (currentTourStop + 1));
     var nextStop = findNextTourStop(currentTourStop + 1);
     console.log(nextStop);
     fly(nextStop);
-    scrollToFeature(nextStop);
+    // scrollToFeature(nextStop);
     currentTourStop++;
+
+    if (currentTourStop == 8) {
+
+        window.setTimeout(function(){
+        enableResumeMode();
+    }, 4000);
+
+    }
 
 });
 
@@ -290,8 +349,13 @@ $(document).on('click', '.previousButton', function() {
     else {
         var previousStop = findNextTourStop(currentTourStop - 1);
         fly(previousStop);
-        scrollToFeature(previousStop);
+        // scrollToFeature(previousStop);
         currentTourStop--;
+    }
+
+    if (currentTourStop == 7) {
+
+        disableResumeMode();
     }
 
 });
@@ -318,7 +382,7 @@ var waypointsDown = $('.resume-item').waypoint(function(direction) {
         // Fly to the matching marker
         fly(markerMatch);
     }}, {
-            offset: '21%',
+            offset: '31%',
             context: $('#features')
 });
 
@@ -339,7 +403,7 @@ var waypointsUp = $('.resume-item').waypoint(function(direction) {
 
         // TODO: Put in timout to avoid premature flying
     }}, {
-            offset: '19%',
+            offset: '29%',
             context: $('#features')
 });
 
@@ -365,8 +429,6 @@ function scrollToFeature(feature) {
             //fires after scrolling finishes
         }
     });
-
-   
 }
 
 
@@ -419,6 +481,24 @@ function fly(markerMatch) {
     openPopup(markerMatch);
 }
 
+
+function enableResumeMode() {
+
+    resumeMode = true;
+    // console.log(resumeMode);
+
+    $('#features').addClass('visible');
+    $('#features').scrollTop(0);
+
+
+    Waypoint.enableAll();
+    Waypoint.refreshAll();
+}
+
+function disableResumeMode() {
+    resumeMode = false;
+    $('#features').removeClass('visible');
+}
 // console.log(waypoint);
 
 

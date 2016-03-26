@@ -55,12 +55,15 @@ h3 {
     transform:translateX(0);
 }
 
-.resume-item {
+#features > section {
     padding:  25px 50px;
     line-height: 25px;
     border-bottom: 1px solid #ddd;
-    opacity: 0.25;
     font-size: 13px;
+}
+
+.resume-item {
+    opacity: 0.25;
     /*margin-top: 1.5em;*/
     /*margin-bottom: 50px;*/
 
@@ -124,14 +127,8 @@ h3 {
     background-color:white;
 }
 
-.showResumeButton {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 100;
+button {
     margin: 10px;
-    /*width: 45%;*/
     height: 40px;
     padding: 10px;
     border: none;
@@ -141,6 +138,29 @@ h3 {
     color: #fff;
     background: #ee8a65;
     font-family: 'Averia Serif Libre', Arial, serif;
+
+    transition: all 0.3s ease 0s;
+
+}
+
+button:hover {
+    background: #f16d3d;
+    box-shadow:0.5px 0.5px 0.25px #888888;
+}
+.toggleResumeButton {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100; 
+}
+
+.tourModeButton {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 
