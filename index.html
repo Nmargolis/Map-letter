@@ -21,31 +21,48 @@
     </head>
     <body>
         <div id='map'>
-        <button class='tourModeButton'>Start tour</button>
+        <!-- <button class='tourModeButton'>Enable tour mode</button> -->
+        <!-- <button class='openResumeButton'>Show resume</button> -->
+        <div class="onoffswitch" title="Toggle between Tour Mode and Resume Mode">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
 
         <div id="welcome" class="floating">
 
-            welcome
+            <p>I’m a tinkerer, quick learner, and map enthusiast, and I would be thrilled to join the Mapbox engineering team. Coming from the nonprofit industry and experience in grassroots movements, I am passionate about open source software and maps as powerful tools to make the world a better place. With a mostly self-taught background and non-traditional path to software engineering, I have developed a knack for tinkering and a figure-it-out attitude. I love coding primarily because it is a way to tackle puzzling challenges, and I would be excited to work on the challenges of developing tools for large datasets with a variety of cultural contexts at Mapbox.</p>
+            <p>This interactive map cover letter and resume will take you through my journey to becoming a software engineer and map-lover.</p>
             <button type="button" class="tour-button nextButton" id="startTourButton">Start tour</button>
         </div>
 
-         <!-- <div class="debug" id="debug1"></div>
-                <div class="debug" id="debug2"></div>
-        </div> -->
+         <!-- <div class="debug" id="debug1"></div> -->
+                <!-- <div class="debug" id="debug2"></div> -->
+        </div>
 
             <div id='features'>
-                <button class='toggleResumeButton'>X</button>
-            <section id='resume-intro'>
+                <button class='closeResumeButton'>X</button>
+            <section class='resume-intro'>
                 <h2>Resume</h2>
                 <p>Scroll to explore</p>
             </section>
-            <section id="tech-skills">
+            <section class="resume-intro">
                     <h3>TECH SKILLS</h3> 
                     <b>TECHNOLOGIES: </b> <br>
                     Python, JavaScript, HTML, CSS, SQL, Flask, Jinja, Git <br>
                     <b>MAPPING/DESIGN: </b> <br>
                     GIS (arcGIS), Remote Sensing (Erdas Imagine), Adobe CS
-            </section>    
+            </section>
+            <!-- <section class="resume-intro">
+                <h3>EDUCATION</h3>
+                <p>SOFTWARE ENGINEERING FELLOW Hackbright Academy <span class="date">December 2015</span></p>
+                <p>BSFS, SCIENCE, TECHNOLOGY & INTERNATIONAL AFFAIRS Georgetown University<span class="date">May 2013<span></p>
+                Relevant college coursework included: JavaScript, C++, GIS, Remote Sensing
+
+                    
+            </section>     -->
             <!-- <div class="spacer"> -->
             <!-- </div>     -->
             <section id='hackbright' class='resume-item'>
@@ -54,14 +71,17 @@
                 <p>At Hackbright Academy I studied full stack web development. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>
             </section>
             <section id='bic' class='resume-item'>
+
+                <div id="bic-logo" class="item-logo"></div>
+
                 <h3>Bank Information Center</h3>
                 <p class="job-title">Information Services Coordinator</p>
-<!--                 <ul>
+                <ul>
                     <li>Maintained and developed website advocating for World Bank transparency and accountability</li>
                     <li>Ensured website security patches, theme and plugins were up to date and compatible</li>
                     <li>oordinated technology infrastructure and troubleshooting within and across offices</li>
                     <li>Managed production on publications, including e-newsletters, case-studies and brochures</li>
-                </ul> -->
+                </ul>
                 <p>At the Bank Information Center, a World Bank watchdog, I learned how to manage the website and the office IT infrastructure on the job, with very little training. I maintained and updated the website, ensuring the Wordpress plugins and theme were up to date and compatible with Wordpress security patches. Managing the website also involved everything from formatting pages with html/css, to implementing custom scripts to work with a plugin for interactive SVG maps, to editing the PHP files to allow for multilingual content.</p>
             </section>
             <section id='rgc' class='resume-item'>
