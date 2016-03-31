@@ -79,9 +79,9 @@ var markers = {
             "id": "georgetown",
             "tourstop": 1,
             "marker-symbol": "college",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Georgetown University School of Foreign Service</div><p>As a Science, Technology and International Affairs major, I studied environmental science with an international social and political lens. I discovered a love for maps when I took my first GIS course, which prompted me to also take Remote Sensing. I took an intro computer science class and the JavaScript got me hooked! To go a little deeper, I took a class in C++, where I learned important concepts like memory allocation, object orientation and recursion.</p><p>In college, I also joined the labor solidarity committee and developed a passion for activism and social justice.</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                "<div class=\"resumePopupContent\"><div class=\"marker-title\">Georgetown University</div><p>Science, Technology and International Affairs major in the School of Foreign Service</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Georgetown University School of Foreign Service</div><p>As a Science, Technology and International Affairs major, I studied environmental science with an international social and political lens. I discovered a love for maps when I took my first GIS course, which prompted me to also take Remote Sensing. I took an intro computer science class and the JavaScript got me hooked! To go a little deeper, I took a class in C++, where I learned important concepts like memory allocation, object orientation and recursion.</p><p>In college, I also joined the labor solidarity committee and developed a passion for activism and social justice.</p>" // +
+                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
+                //"<div class=\"resumePopupContent\"><div class=\"marker-title\">Georgetown University</div><p>Science, Technology and International Affairs major in the School of Foreign Service</p></div>"
         }
     }, {
         "type": "Feature",
@@ -94,9 +94,8 @@ var markers = {
             "id": "mayor",
             "tourstop": 2,
             "marker-symbol": "town-hall",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">San Francisco Mayor's Office Department of Greening</div><p>As an intern, I coordinated the Mayor's urban agriculture initiative. I mapped an audit of city owned land available for urban agriculture and acted as a liaison between the urban gardening organizations and the Mayor's office. I saw firsthand the power of maps as tools for community development.</p>" +
-                 "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                 "<div class=\"resumePopupContent\"><div class=\"marker-title\">San Francisco City Hall</div><p>Mayor's Office of Greening</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">San Francisco Mayor's Office Department of Greening</div><p>As an intern, I coordinated the Mayor's urban agriculture initiative. I mapped an audit of city owned land available for urban agriculture and acted as a liaison between the urban gardening organizations and the Mayor's office. I saw firsthand the power of maps as tools for community development.</p>" // +
+                 //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>"
         }
     }, {
         "type": "Feature",
@@ -109,9 +108,8 @@ var markers = {
             "id": "rgc",
             "tourstop": 4,
             "marker-symbol": "hospital",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Robert Graham Center</div><p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography for a study on redefining the concept and measures of geographic access to health care. On my own initiative, I migrated an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for keeping it cleaner in the future.</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                "<div class=\"resumePopupContent\"><div class=\"marker-title\">Robert Graham Center</div><p>Think Tank for research on access to primary health care</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Robert Graham Center</div><p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography for a study on redefining the concept and measures of geographic access to health care. On my own initiative, I migrated an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for keeping it cleaner in the future.</p>"
+                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>"
         }
     }, {
         "type": "Feature",
@@ -124,9 +122,9 @@ var markers = {
             "id": "bic",
             "tourstop": 5,
             "marker-symbol": "library",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>As the Information Services Coordinator at BIC, a nonprofit advocating for access to information, transparency, and accountability at the World Bank, I learned how to manage the website and IT on the job with very little training. I figured out how to update and maintain the Wordpress plugins and theme, format pages with HTML/CSS, and even write some scripts in javascript and PHP. I was in charge of everything from troubleshooting IT issues (aka googling error messages) and maintaining the server, to designing and sending newsletters. I believe in the work BIC does and I enjoyed tinkering with the website, but I wanted to delve more deeply into how to build web-based tools from the ground up.</p><p>Which led me to Hackbright...</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                "<div class=\"resumePopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>Non-profit civil society organization advocating for World Bank transparency and actounability</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>As the Information Services Coordinator at BIC, a nonprofit advocating for access to information, transparency, and accountability at the World Bank, I learned how to manage the website and IT on the job with very little training. I figured out how to update and maintain the Wordpress plugins and theme, format pages with HTML/CSS, and even write some scripts in javascript and PHP. I was in charge of everything from troubleshooting IT issues (aka googling error messages) and maintaining the server, to designing and sending newsletters. I believe in the work BIC does and I enjoyed tinkering with the website, but I wanted to delve more deeply into how to build web-based tools from the ground up.</p><p>Which led me to Hackbright...</p>" // +
+                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" // +
+                // "<div class=\"resumePopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>Non-profit civil society organization advocating for World Bank transparency and actounability</p></div>"
         }
     }, {
         "type": "Feature",
@@ -139,9 +137,9 @@ var markers = {
             "id": "belize",
             "tourstop": 3,
             "marker-symbol": "campsite",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Maya Geoarcheology Research</div><p>As a research assistant in Belize for two summers in a row, I studied soil science and geoarcheology with a professor researching Ancient Maya agriculture and water systems. Responsibilities included trudging through wetlands surveying and taking GPS points, digging lots of soil pits, pushing trucks out of the mud, and staving off swarms of killer bees... FOR SCIENCE!!!</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                "<div class=\"resumePopupContent\"><div class=\"marker-title\">Maya Geoarcheology Research</div><p>Soil science research on Ancient Maya agriculture and water systems with professor Timothy Beach</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Maya Geoarcheology Research</div><p>As a research assistant in Belize for two summers in a row, I studied soil science and geoarcheology with a professor researching Ancient Maya agriculture and water systems. Responsibilities included trudging through wetlands surveying and taking GPS points, digging lots of soil pits, pushing trucks out of the mud, and staving off swarms of killer bees... FOR SCIENCE!!!</p>" // +
+                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" // +
+                // "<div class=\"resumePopupContent\"><div class=\"marker-title\">Maya Geoarcheology Research</div><p>Soil science research on Ancient Maya agriculture and water systems with professor Timothy Beach</p></div>"
         }
     }, {
         "type": "Feature",
@@ -154,9 +152,9 @@ var markers = {
             "id": "hackbright",
             "tourstop": 6,
             "marker-symbol": "college",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Fellow at Hackbright Academy</div><p>As a fellow in the intensive 12 week program, I learned how to build a web app from end to end. I built an app called TenantConnect for tenants to rate landlords, look up landlords by address or name, and message each other to facilitate knowledge sharing and organizing. Hackbright taught me the languages (Python, SQL, JavaScript, HTML/CSS), tools (frameworks like Flask and Bootstrap, Git, command line, etc), and concepts (object orientation, testing, data modeling, data structures etc.) of software engineering. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                "<div class=\"resumePopupContent\"><div class=\"marker-title\">Hackbright Academy</div><p>Software engineering school for women</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Fellow at Hackbright Academy</div><p>As a fellow in the intensive 12 week program, I learned how to build a web app from end to end. I built an app called TenantConnect for tenants to rate landlords, look up landlords by address or name, and message each other to facilitate knowledge sharing and organizing. Hackbright taught me the languages (Python, SQL, JavaScript, HTML/CSS), tools (frameworks like Flask and Bootstrap, Git, command line, etc), and concepts (object orientation, testing, data modeling, data structures etc.) of software engineering. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>" // +
+                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>"
+                // "<div class=\"resumePopupContent\"><div class=\"marker-title\">Hackbright Academy</div><p>Software engineering school for women</p></div>"
         }
     }, {
         "type": "Feature",
@@ -169,9 +167,9 @@ var markers = {
             "id": "aemp",
             "tourstop": 7,
             "marker-symbol": "library",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Anti-Eviction Mapping Project</div><p>After Hackbright, I jumped right in to put my knowledge to good use and to continue learning. As a member of the Anti-eviction Mapping Project data viz team, I have taken on projects from cleaning and geocoding over 40,000 records of evictions and foreclosures, to finding new sources of data, to learning the d3.js library to make an animated map of where people move after they are evicted.</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
-                "<div class=\"resumePopupContent\"><div class=\"marker-title\">Anti-Eviction Mapping Project</div><p>Community group working with tenants rights organizations to visualize evictions and the effects of gentrification.</p></div>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Anti-Eviction Mapping Project</div><p>After Hackbright, I jumped right in to put my knowledge to good use and to continue learning. As a member of the Anti-eviction Mapping Project data viz team, I have taken on projects from cleaning and geocoding over 40,000 records of evictions and foreclosures, to finding new sources of data, to learning the d3.js library to make an animated map of where people move after they are evicted.</p>" // +
+                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>" +
+                // "<div class=\"resumePopupContent\"><div class=\"marker-title\">Anti-Eviction Mapping Project</div><p>Community group working with tenants rights organizations to visualize evictions and the effects of gentrification.</p></div>"
         }
     },
     {
@@ -185,8 +183,8 @@ var markers = {
             "id": "mapbox",
             "tourstop": 9,
             "marker-symbol": "rocket",
-            "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I used the Mapbox Geocoding API, Mapbox Studio Classic, and Mapbox.js library for my Hackbright Project. In the process, I read lots of READMEs and explored the code on GitHub, and I would like to deepen that knowledge and contribute to the valuable tools Mapbox provides.</p><p>My experience figuring out how to solve technical problems on the job in the nonprofit world, combined with the full stack software engineering skills I’ve learned through Hackbright and self study, would make me a valuable addition to the Mapbox team. I would be excited to work at Mapbox because I love maps, I appreciate the commitment to open source, and I am excited by the prospect of finding creative solutions to interesting challenges arising from big datasets and complex use cases.</p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button>"
+            "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I used the Mapbox Geocoding API, Mapbox Studio Classic, and Mapbox.js library for my Hackbright Project. In the process, I read lots of READMEs and explored the code on GitHub, and I would like to deepen that knowledge and contribute to the valuable tools Mapbox provides.</p><p>My experience figuring out how to solve technical problems on the job in the nonprofit world, combined with the full stack software engineering skills I've learned through Hackbright and self study, would make me a valuable addition to the Mapbox team. I would be excited to work at Mapbox because I love maps, I appreciate the commitment to open source, and I am excited by the prospect of finding creative solutions to interesting challenges arising from big datasets and complex use cases.</p>" // +
+                // "<button type=\"button\" class=\"previousButton\">Previous</button>"
         }
     }, {
         "type": "Feature",
@@ -199,8 +197,8 @@ var markers = {
             "id": "null-island",
             "tourstop": 8,
             "marker-symbol": "danger",
-            "description": "<div class=\"marker-title\">Null Island</div><p>The journey hasn't always been smooth... I love tackling complex problems while coding. Sometimes I faced challenges and didn't get the results I wanted... but then I learned something new!</p> <p><img src=\"fail.gif\" alt=\"Computer fail\" style=\"width:200px;height:200px;\"></p>" +
-                "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
+            "description": "<div class=\"marker-title\">Null Island</div><p>The journey hasn't always been smooth... I love tackling complex problems while coding. Sometimes I faced challenges and didn't get the results I wanted... but then I learned something new!</p> <p><img src=\"fail.gif\" alt=\"Computer fail\" style=\"width:200px;height:200px;\"></p>" // +
+                // "<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button>"
         }
     },
     ]
@@ -339,9 +337,12 @@ $(document).on('click', '.nextButton', function() {
     console.log('Next stop: ' + (currentTourStop + 1));
     var nextStop = findNextTourStop(currentTourStop + 1);
     console.log(nextStop);
+
+    currentTourStop++;
+
     fly(nextStop);
     // scrollToFeature(nextStop);
-    currentTourStop++;
+    
 
     // If next stop is the last stop, enable resume mode automatically
     if (currentTourStop == 9) {
@@ -460,10 +461,31 @@ function scrollToFeature(feature) {
 
 
 function openPopup(marker) {
+
+    // HTML for buttons on to add to popup content on tours
+    var previousButtonHTML = '<button type=\"button\" class=\"previousButton\">Previous</button>';
+    var nextButtonHTML = '<button type=\"button\" class=\"nextButton\">Next</button></div>';
+    var restartTourButtonHTML = '<button type=\"button\"class=\"previousButton\">Restart Tour</button>';
+    
+    // If the marker is not a cluster
     if (!marker.properties.cluster) {
 
+        if (resumeMode === true) {
+            content = marker.properties.description;
+        }
+        else if (currentTourStop == 9) {
+            content = marker.properties.description + restartTourButtonHTML;
+        }
+        else {
+            content = marker.properties.description + previousButtonHTML + nextButtonHTML;
+        }
+
+        console.log('tour stop is ' + currentTourStop);
+
+        console.log(content);
+
     popup.setLngLat(marker.geometry.coordinates)
-    .setHTML(marker.properties.description)
+    .setHTML(content)
     .addTo(map);
     }
 }

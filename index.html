@@ -8,9 +8,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         <script src="vendor/waypoints/jquery.waypoints.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js"></script>
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js'></script>
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css' rel='stylesheet' />
-        <link href='https://fonts.googleapis.com/css?family=Special+Elite|Averia+Serif+Libre:400,700' rel='stylesheet' type='text/css'>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.js"></script>
+        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.15.0/mapbox-gl.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Special+Elite|Averia+Serif+Libre:400,700" rel="stylesheet" type="text/css">
         <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> -->
         <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
         <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
@@ -20,9 +20,9 @@
 
     </head>
     <body>
-        <div id='map'>
-        <!-- <button class='tourModeButton'>Enable tour mode</button> -->
-        <!-- <button class='openResumeButton'>Show resume</button> -->
+        <div id="map">
+        <!-- <button class="tourModeButton">Enable tour mode</button> -->
+        <!-- <button class="openResumeButton">Show resume</button> -->
         <div class="onoffswitch" title="Toggle between Tour Mode and Resume Mode">
             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
             <label class="onoffswitch-label" for="myonoffswitch">
@@ -42,9 +42,9 @@
                 <!-- <div class="debug" id="debug2"></div> -->
         </div>
 
-            <div id='features'>
-                <button class='closeResumeButton'>X</button>
-            <section class='resume-intro'>
+            <div id="features">
+                <button class="closeResumeButton">X</button>
+            <section class="resume-intro">
                 <h2>Resume</h2>
                 <p>Scroll to explore</p>
             </section>
@@ -65,50 +65,91 @@
             </section>     -->
             <!-- <div class="spacer"> -->
             <!-- </div>     -->
-            <section id='hackbright' class='resume-item'>
+            <section id="hackbright" class="resume-item">
+                <!-- <div id="hb-logo" class="item-logo"></div> -->
                 <h3>Hackbright Academy</h3>
                 <p class="job-title">Software Engineering Fellow</p>
-                <p>At Hackbright Academy I studied full stack web development. Hackbright taught me the Python, SQL, JavaScript, HTML/CSS and concepts like object orientation, testing, and knowledge of data structures required to build a web app. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>
+                <ul>
+                    <li>Languages: Python, SQL, JavaScript, HTML/CSS</li>
+                    <li>Frameworks/tools: Flask, Bootstrap, Git</li>
+                    <li>Project: <a href="https://tenantconnect.herokuapp.com/">TenantConnect</a>, a web app that allows tenants to rate landlords and message each other
+                </ul>
             </section>
-            <section id='bic' class='resume-item'>
+            <section id="georgetown" class="resume-item">
+                <h3>Georgetown University</h3>
+                <p class="job-title">Science, Technology and International Afairs</p>
+                <ul>
+                    <li>Relevant courses: JavaScript, C++, GIS, Remote Sensing</li>
+                </ul>
+            </section>
+            <section id="bic" class="resume-item">
 
-                <div id="bic-logo" class="item-logo"></div>
+                <!-- <div id="bic-logo" class="item-logo"></div> -->
 
                 <h3>Bank Information Center</h3>
                 <p class="job-title">Information Services Coordinator</p>
                 <ul>
-                    <li>Maintained and developed website advocating for World Bank transparency and accountability</li>
                     <li>Ensured website security patches, theme and plugins were up to date and compatible</li>
-                    <li>oordinated technology infrastructure and troubleshooting within and across offices</li>
+                    <li>Coordinated technology infrastructure and troubleshooting within and across offices</li>
                     <li>Managed production on publications, including e-newsletters, case-studies and brochures</li>
                 </ul>
-                <p>At the Bank Information Center, a World Bank watchdog, I learned how to manage the website and the office IT infrastructure on the job, with very little training. I maintained and updated the website, ensuring the Wordpress plugins and theme were up to date and compatible with Wordpress security patches. Managing the website also involved everything from formatting pages with html/css, to implementing custom scripts to work with a plugin for interactive SVG maps, to editing the PHP files to allow for multilingual content.</p>
             </section>
-            <section id='rgc' class='resume-item'>
+            <section id="rgc" class="resume-item">
                 <h3>Robert Graham Center</h3>
                 <p class="job-title">Research Assistant</p>
-                <p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography to contribute to a study on redefining the concept and measures of geographic access to health care. On my own initiative, I facilitated the migration of an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for ensuring a cleaner database in the future.</p>
+                <ul>
+                    <li>Conducted literature review for research on behavioral geography and access</li>
+                    <li>Identified and implemented solution for migrating to a cloud-based citation database using ETL process</li>
+                </ul>
             </section>
-            <section id='belize' class='resume-item'>
+            <section id="belize" class="resume-item">
                 <h3>Belize</h3>
                 <p class="job-title">Ancient Maya Geoarcheology Research Assistant</p>
-                <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
+                <ul>
+                    <li>Excavated, collected, and analyzed soil profiles, water samples, and GPS data </li>
+                </ul>
             </section>
-            <section id='mayor' class='resume-item'>
+            <section id="mayor" class="resume-item">
                 <h3>San Francisco Mayor's Office</h3>
                 <p class="job-title">Urban Agriculture Intern</p>
-                <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
+                <ul>
+                    <li>Compiled, updated, and mapped data from audit of city-owned land for its urban agriculture potential</li>
+                    <li>Acted as a liaison between stakeholder groups, City departments and the Mayor’s Office</li>
+                </ul>
             </section>
-            <section id='georgetown' class='resume-item'>
-                <h3>Georgetown University</h3>
-                <p class="job-title">Science, Technology and International Afairs</p>
-                <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
+            <section id="volunteer">
+                <h3>Volunteer Work</h3>
+                <p><b>Anti-eviction Mapping Project:</b> Mapping relocation with d3.js, cleaning and geocoding data, finidng new data sources</p>
+                <p><b>DC Fair Food:</b> Cofounder of chapter of Coalition of Immokalee Workers’ ally network
+                <p><b>Student/Farmworker Alliance:</b> National steering committee member
             </section>
-            <section id='mapbox' class='resume-item'>
-                <h3>Mapbox</h3>
-                <p class="job-title">Map Data Engineer</p>
-                <p>description description description description description description description description description description escription description description description description description description description description description description description description description description description description description description description description description description description description description description description description description </p>
-            </section>                   
+            <section id="footer">
+                <h3>Other Interests</h3> <p> When I'm not coding, mapping or organizing, I enjoy hiking, playing ultimate frisbee, making jewelry and doing crossword puzzles.</p>
+                <br>
+            </section>
+            <section id="more-info">
+                <div id="contact">
+                <h3>Find me</h3>
+                    <a href="https://github.com/Nmargolis" class="socialLink">
+                        <img src="img/stitch_github.png" alt="github" title= height="50" width="50">
+                    </a>
+
+                     <a href="https://www.linkedin.com/in/nataliasmargolis" class="socialLink">
+                        <img src="img/stitch_linked_in.png" alt="linkedin" height="50" width="50">
+                    </a>
+
+                    <a href="mailto:nmargolis89@gmail.com" class="socialLink">
+                        <img src="img/stitch_email.png" alt="email" height="50" width="50">
+                    </a>
+
+                    <a href="https://www.instagram.com/nmarg89" class="socialLink">
+                        <img src="img/stitch_instagram.png" alt="instagram" height="50" width="50">
+                    </a>
+                </div>
+
+                <p><a href="https://github.com/Nmargolis/mapletter">Explore the code for this on github</a>.</p>
+
+            </section>               
             </div>
 
         <script type="text/javascript" src="scripts.js"></script>

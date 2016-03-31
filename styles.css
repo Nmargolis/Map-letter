@@ -23,6 +23,10 @@ h3 {
     text-align: center;
 }
 
+ul {
+    padding-left: none;
+}
+
 #map {
     position: absolute;
     left:0;
@@ -64,7 +68,7 @@ h3 {
 }
 
 #features > section {
-    padding:  25px 50px;
+    padding:  20px 50px;
     line-height: 25px;
     border-bottom: 1px solid #ddd;
     font-size: 13px;
@@ -109,6 +113,7 @@ h3 {
     padding: 0;
     font-weight: 700;
     font-family: 'Averia Serif Libre', Arial;
+    text-align: center;
 }
 
 .mapboxgl-popup {
@@ -121,7 +126,7 @@ h3 {
     font-family: 'Averia Serif Libre', Arial;
 }
 
-.item-logo {
+/*.item-logo {
     width:150px;
     height:150px;
     border-radius: 75px;
@@ -139,6 +144,10 @@ h3 {
 #bic-logo {
     background-image:url(img/bic.png);
 }
+
+#hb-logo {
+    background-image:url(img/hb.png);
+}*/
 
 /*TODO: FIX THIS UP*/
 .floating {
@@ -287,7 +296,16 @@ button:hover {
 }
 
 
+/* Center social media links */
+#contact {
+    width: 212px;
+    margin: 0 auto;
+}
 
+/* Get rid of underline on social links */
+.socialLink {
+    text-decoration: none;
+}
 
 
 
