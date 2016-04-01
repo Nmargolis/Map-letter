@@ -4,14 +4,9 @@ body, html {
     padding:0; 
     height:100%;
     width:100%;
+    overflow: hidden;
 }
 
-/*#map {
-    position:absolute;    
-    top:0; 
-    bottom:0; 
-    width:100%;
-}*/
 h2 {
     font-family: 'Averia Serif Libre', Arial;
     font-size: 2em;
@@ -27,28 +22,29 @@ ul {
     padding-left: 0;
 }
 
+a {
+    color: #656565;
+}
+
+a:visited{
+    color: #656565;
+}
+
+.centered-link {
+    display: table;
+    margin: auto;
+}
+
 #map {
     position: absolute;
     left:0;
     top: 0;
     bottom: 0;
     right: 0;
-    /*transition:all .3s ease-in-out;*/
 }
-
-#map.resume-mode {
-  /*  right:450px;
-    left:0;*/
-}
-
-/*#resume-container {
-    width: 30%;
-    margin-left: 70%;
-}*/
 
 #features {
-    /*border: 3px solid red;*/
-    width: 450px;
+    max-width: 450px;
     position: absolute;
     right: 0;
     top: 0;
@@ -64,11 +60,10 @@ ul {
 
 #features.visible {
     transform:translateX(0);
-    /*right:0;*/
 }
 
 #features > section {
-    padding:  20px 50px;
+    padding:  25px 45px;
     line-height: 25px;
     border-bottom: 1px solid #ddd;
     font-size: 13px;
@@ -76,12 +71,8 @@ ul {
 
 .resume-item {
     opacity: 0.25;
-    /*margin-top: 1.5em;*/
-    /*margin-bottom: 50px;*/
 
- /*transition opacity, for .5 seconds, with easing style ease-in-out*/
     transition:all .3s ease-in-out;
-
     transform:scale(.9);
 
 }
@@ -103,9 +94,6 @@ ul {
     margin-bottom: 600px;
 }
 
-/*.spacer {
-    height: 60px;
-}*/
 
 .job-title {
     line-height: .75em;
@@ -126,19 +114,15 @@ ul {
     font-family: 'Averia Serif Libre', Arial;
 }
 
-/*.item-logo {
+.item-logo {
     width:150px;
     height:150px;
     border-radius: 75px;
     margin:0 auto;
     display: block;
 
-    background-color:red;
-
     background-size:cover;
-    background-position: center middle;
-
-
+    background-position: center;
 }
 
 #bic-logo {
@@ -146,8 +130,27 @@ ul {
 }
 
 #hb-logo {
-    background-image:url(img/hb.png);
-}*/
+    background-image:url(img/hackbright.png);
+}
+
+#gtown-logo {
+    background-image:url(img/gtown.png);
+}
+
+#rgc-logo {
+    background-image:url(img/rgc.png);
+}
+
+#belize-logo {
+    background-image:url(img/belize.png);
+}
+
+#mapbox-logo {
+    background-image:url(img/mapbox.png);
+}
+#sf-logo {
+    background-image:url(img/sfseal.png);
+}
 
 /*TODO: FIX THIS UP*/
 .floating {
@@ -157,11 +160,11 @@ ul {
     top:50%;
     left:50%;
 
-    margin-top: -175px;
-    margin-left: -300px;
+    margin-top: -200px;
+    margin-left: -200px;
 
-    width:600px;
-    height:350px;
+    max-width:400px;
+    height:auto;
 
     background-color:white;
     /*border: 1px red solid;*/
@@ -189,51 +192,11 @@ button:hover {
     background: #f16d3d;
     box-shadow:0.5px 0.5px 0.25px #888888;
 }
-/*.closeResumeButton,
-.openResumeButton {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 100; 
-}
-
-.tourModeButton {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-}*/
 
 .date {
     text-align: right;
     opacity: 0.8;
 }
-
-
-/* Debug styles */
-.debug {
-    position:absolute;
-    width:100%;
-    border:2px solid green;
-    width:450px;
-    z-index:999999999999999989999999;
-}
-
-#debug1 {
-    height:100px;
-    top:0;
-    right:0;
-}
-
-#debug2 {
-    height:100px;
-    bottom:0;
-    right:0;
-}
-
-
 
 /* Styles to hide and show resume popup content and tour popup content */
 .tourPopupContent {
@@ -251,7 +214,10 @@ button:hover {
     position: fixed; width: 160px;
     margin: 10px;
     z-index: 999;
+    display: none;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+
+    transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox {
     display: none;
@@ -341,7 +307,6 @@ button:hover {
     font-weight: bold;
     line-height: 30px;
 }
-
 
 
 
