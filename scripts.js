@@ -132,7 +132,7 @@ var markers = {
             "id": "null-island",
             "tourstop": 8,
             "marker-symbol": "danger",
-            "description": "<div class=\"marker-title\">Null Island</div><p>The journey hasn't always been smooth... I love tackling complex problems while coding. Sometimes I faced challenges and didn't get the results I wanted... but then I learned something new!</p> <p><img src=\"fail.gif\" alt=\"Computer fail\" style=\"width:200px;height:200px;\"></p>"
+            "description": "<div class=\"marker-title\">Null Island</div><p>The journey hasn't always been smooth... I love tackling complex problems while coding. Sometimes I faced challenges and didn't get the results I wanted... but then I learned something new!</p> <p><img src=\"img/fail.gif\" alt=\"Computer fail\" style=\"width:200px;height:200px;\"></p>"
         }
     },
     ]

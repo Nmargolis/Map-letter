@@ -10,6 +10,7 @@ body, html {
 h2 {
     font-family: 'Averia Serif Libre', Arial;
     font-size: 2em;
+    text-align: center;
 }
 
 h3 {
@@ -145,9 +146,6 @@ a:visited{
     background-image:url(img/belize.png);
 }
 
-#mapbox-logo {
-    background-image:url(img/mapbox.png);
-}
 #sf-logo {
     background-image:url(img/sfseal.png);
 }
@@ -309,7 +307,10 @@ button:hover {
 }
 
 
-
+/*center p under resume header*/
+.center {
+    text-align: center;
+}
 
 
 
