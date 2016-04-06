@@ -11,5 +11,5 @@ The custom map is designed using Mapbox Studio.
 The guided tour uses Mapbox GL flyTo functionality, as well as custom JavaScript and Jquery components.
 
 ## Resume
-Scroll through the resume while the map zooms to each resume item as it becomes active. The scrolling function uses [Waypoints](http://imakewebthings.com/waypoints/) Waypoints and [scrollTo](https://github.com/flesler/jquery.scrollTo) Jquery plugins.
+Scroll through the resume while the map zooms to each resume item as it becomes active. The scrolling function uses [Waypoints](http://imakewebthings.com/waypoints/) and [scrollTo](https://github.com/flesler/jquery.scrollTo) Jquery plugins.
 

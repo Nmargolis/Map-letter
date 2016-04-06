@@ -51,7 +51,6 @@ var markers = {
             "tourstop": 4,
             "marker-symbol": "hospital",
             "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Robert Graham Center</div><p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography for a study on redefining the concept and measures of geographic access to health care. On my own initiative, I migrated an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for keeping it cleaner in the future.</p>"
-                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>"
         }
     }, {
         "type": "Feature",
@@ -65,8 +64,6 @@ var markers = {
             "tourstop": 5,
             "marker-symbol": "library",
             "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>As the Information Services Coordinator at BIC, a nonprofit advocating for access to information, transparency, and accountability at the World Bank, I learned how to manage the website and IT on the job with very little training. I figured out how to update and maintain the Wordpress plugins and theme, format pages with HTML/CSS, and even write some scripts in javascript and PHP. I was in charge of everything from troubleshooting IT issues (aka googling error messages) and maintaining the server, to designing and sending newsletters. I believe in the work BIC does and I enjoyed tinkering with the website, but I wanted to delve more deeply into how to build web-based tools from the ground up.</p><p>Which led me to Hackbright...</p>"
-                //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>"
-                // "<div class=\"resumePopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>Non-profit civil society organization advocating for World Bank transparency and actounability</p></div>"
         }
     }, {
         "type": "Feature",
