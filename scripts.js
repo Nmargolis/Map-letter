@@ -23,7 +23,7 @@ var markers = {
             "id": "georgetown",
             "tourstop": 1,
             "marker-symbol": "college",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Georgetown University School of Foreign Service</div><p>As a Science, Technology and International Affairs major, I studied environmental science with an international social and political lens. I discovered a love for maps when I took my first GIS course, which prompted me to also take Remote Sensing. I took an intro computer science class and the JavaScript got me hooked! To go a little deeper, I took a class in C++, where I learned important concepts like memory allocation, object orientation and recursion.</p><p>In college, I also joined the labor solidarity committee and developed a passion for activism and social justice.</p>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Georgetown University School of Foreign Service</div><p>As a Science, Technology and International Affairs major, I studied environmental science with an international social and political lens.</p><p> I discovered a love for maps when I took my first GIS course, which prompted me to also take Remote Sensing.</p><p> I took an intro computer science class and the JavaScript got me hooked! To go a little deeper, I took a class in C++, where I learned important concepts like memory allocation, object orientation and recursion.</p>"
         }
     }, {
         "type": "Feature",
@@ -37,7 +37,6 @@ var markers = {
             "tourstop": 2,
             "marker-symbol": "town-hall",
             "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">San Francisco Mayor's Office Department of Greening</div><p>As an intern, I coordinated the Mayor's urban agriculture initiative. I mapped an audit of city owned land available for urban agriculture and acted as a liaison between the urban gardening organizations and the Mayor's office. I saw firsthand the power of maps as tools for community development.</p>"
-                 //"<button type=\"button\" class=\"previousButton\">Previous</button><button type=\"button\" class=\"nextButton\">Next</button></div>"
         }
     }, {
         "type": "Feature",
@@ -50,7 +49,7 @@ var markers = {
             "id": "rgc",
             "tourstop": 4,
             "marker-symbol": "hospital",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Robert Graham Center</div><p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography for a study on redefining the concept and measures of geographic access to health care. On my own initiative, I migrated an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for keeping it cleaner in the future.</p>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Robert Graham Center</div><p>At the Robert Graham Center, a primary health care think tank, I researched behavioral geography for a study on redefining the concept and measures of geographic access to health care.</p><p>On my own initiative, I migrated an outdated, messy database of thousands bibliographic citations to a more user-friendly cloud-based solution, and trained the entire office on how to use the new tool with standards for keeping it cleaner in the future.</p>"
         }
     }, {
         "type": "Feature",
@@ -63,7 +62,7 @@ var markers = {
             "id": "bic",
             "tourstop": 5,
             "marker-symbol": "library",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>As the Information Services Coordinator at BIC, a nonprofit advocating for access to information, transparency, and accountability at the World Bank, I learned how to manage the website and IT on the job with very little training. I figured out how to update and maintain the Wordpress plugins and theme, format pages with HTML/CSS, and even write some scripts in javascript and PHP. I was in charge of everything from troubleshooting IT issues (aka googling error messages) and maintaining the server, to designing and sending newsletters. I believe in the work BIC does and I enjoyed tinkering with the website, but I wanted to delve more deeply into how to build web-based tools from the ground up.</p><p>Which led me to Hackbright...</p>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Bank Information Center</div><p>As the Information Services Coordinator at BIC, a nonprofit advocating for access to information, transparency, and accountability at the World Bank, I learned how to manage the website and IT on the job with very little training. I figured out how to update and maintain the Wordpress plugins and theme, format pages with HTML/CSS, and even write some scripts in javascript and PHP. I was in charge of everything from troubleshooting IT issues (aka googling error messages) and maintaining the server, to designing and sending newsletters.</p> <p>I enjoyed tinkering with the website, but I wanted to delve more deeply into how to build web-based tools from the ground up. ...Which led me to Hackbright...</p>"
         }
     }, {
         "type": "Feature",
@@ -76,7 +75,7 @@ var markers = {
             "id": "belize",
             "tourstop": 3,
             "marker-symbol": "campsite",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Maya Geoarcheology Research</div><p>As a research assistant in Belize for two summers in a row, I studied soil science and geoarcheology with a professor researching Ancient Maya agriculture and water systems. Responsibilities included trudging through wetlands surveying and taking GPS points, digging lots of soil pits, pushing trucks out of the mud, and staving off swarms of killer bees... FOR SCIENCE!!!</p>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Maya Geoarcheology Research</div><p>As a research assistant in Belize for two summers in a row, I studied soil science and geoarcheology with a professor researching Ancient Maya agriculture and water systems.</p><p>Responsibilities included trudging through wetlands surveying and taking GPS points, digging lots of soil pits, pushing trucks out of the mud, and staving off swarms of killer bees... FOR SCIENCE!!!</p>"
         }
     }, {
         "type": "Feature",
@@ -89,7 +88,7 @@ var markers = {
             "id": "hackbright",
             "tourstop": 6,
             "marker-symbol": "college",
-            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Fellow at Hackbright Academy</div><p>As a fellow in the intensive 12 week program, I learned how to build a web app from end to end. I built an app called TenantConnect for tenants to rate landlords, look up landlords by address or name, and message each other to facilitate knowledge sharing and organizing. Hackbright taught me the languages (Python, SQL, JavaScript, HTML/CSS), tools (frameworks like Flask and Bootstrap, Git, command line, etc), and concepts (object orientation, testing, data modeling, data structures etc.) of software engineering. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>"
+            "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Fellow at Hackbright Academy</div><p>As a fellow in the intensive 12 week program, I learned how to build a web app from end to end. I built an app called TenantConnect for tenants to rate landlords, look up landlords by address or name, and message each other to facilitate knowledge sharing and organizing.</p><p> Hackbright taught me the languages (Python, SQL, JavaScript, HTML/CSS), tools (frameworks like Flask and Bootstrap, Git, command line, etc), and concepts (object orientation, testing, data modeling, data structures etc.) of software engineering. But the most valuable experience I gained at Hackbright was learning how to learn, and that will allow me to continue to pick up new languages and technologies in the future.</p>"
         }
     }, {
         "type": "Feature",
@@ -104,20 +103,6 @@ var markers = {
             "marker-symbol": "library",
             "description": "<div class=\"tourPopupContent\"><div class=\"marker-title\">Anti-Eviction Mapping Project</div><p>After Hackbright, I jumped right in to put my knowledge to good use and to continue learning. As a member of the Anti-eviction Mapping Project data viz team, I have taken on projects from cleaning and geocoding over 40,000 records of evictions and foreclosures, to finding new sources of data, to learning the d3.js library to make an animated map of where people move after they are evicted.</p>"
         }
-    },
-    {
-        "type": "Feature",
-        "geometry": {
-            "type": "Point",
-            "coordinates": [-77.03238901390978, 38.913188059745586]
-        },
-        "properties": {
-            "title": "Mapbox",
-            "id": "mapbox",
-            "tourstop": 9,
-            "marker-symbol": "rocket",
-            "description": "<div class=\"marker-title\">Map Data Engineer at Mapbox</div><p>I used the Mapbox Geocoding API, Mapbox Studio Classic, and Mapbox.js library for my Hackbright Project. In the process, I read lots of READMEs and explored the code on GitHub, and I would like to deepen that knowledge and contribute to the valuable tools Mapbox provides.</p><p>My experience figuring out how to solve technical problems on the job in the nonprofit world, combined with the full stack software engineering skills I've learned through Hackbright and self study, would make me a valuable addition to the Mapbox team. I would be excited to work at Mapbox because I love maps, I appreciate the commitment to open source, and I am excited by the prospect of finding creative solutions to interesting challenges arising from big datasets and complex use cases.</p>"
-        }
     }, {
         "type": "Feature",
         "geometry": {
@@ -129,7 +114,7 @@ var markers = {
             "id": "null-island",
             "tourstop": 8,
             "marker-symbol": "danger",
-            "description": "<div class=\"marker-title\">Null Island</div><p>The journey hasn't always been smooth... I love tackling complex problems while coding. Sometimes I faced challenges and didn't get the results I wanted... but then I learned something new!</p> <p><img src=\"img/fail.gif\" alt=\"Computer fail\" style=\"width:200px;height:200px;\"></p>"
+            "description": "<div class=\"marker-title\">Null Island</div><p>The journey hasn't always been smooth... I love tackling complex problems while coding, which means sometimes I face challenges and don't get the results I wanted... but then I learn something new!</p> <p><img src=\"img/fail.gif\" alt=\"Computer fail\" style=\"width:200px;height:200px;\"></p>"
         }
     },
     ]
@@ -197,7 +182,7 @@ map.on('style.load', function () {
 
 
 // Create popups
-var popup = new mapboxgl.Popup({closeButton: false, closeOnClick: false, anchor: "right"});
+var popup = new mapboxgl.Popup({closeButton: false, closeOnClick: false, anchor: "bottom"});
 
 // When a click event occurs near a marker icon, open a popup at the location of
 // the feature, with description HTML from its properties.
@@ -244,37 +229,63 @@ map.on('mousemove', function (e) {
 //Initialize global variables
 var resumeMode = false;
 var currentTourStop = 0;
+var isMobile = checkViewport();
 
-
-// Go to next tour stop when next button is clicked
-// Use event delegation to bind click event to buttons that haven't been created yet
-$(document).on('click', '.nextButton', function() {
-    var nextStop = findNextTourStop(currentTourStop + 1);
-
-    currentTourStop++;
-
-    fly(nextStop);
-    // scrollToFeature(nextStop);
-    
-    // Update progress bar
-    updateProgress(currentTourStop);
-
-    // If next stop is the last stop, enable resume mode automatically
-    if (currentTourStop == 9) {
-
-        window.setTimeout(function(){
-        toggleResumeMode();
-        $('.onoffswitch').show();
-    }, 4000);
-
+$(window).resize(function() {
+    isMobile = checkViewport();
+    if (isMobile && resumeMode) {
+        popup.remove();
     }
 
 });
 
+function checkViewport() {
+    var vWidth = $(window).width();
+    return (vWidth <= 768) ? true : false;
+}
+
+// Go to next tour stop when next button is clicked
+// Use event delegation to bind click event to buttons that haven't been created yet
+$(document).on('click', '.nextButton', function() {
+
+    currentTourStop++;
+    
+    // If next stop is the last stop, enable resume mode automatically
+    if (currentTourStop == 9) {
+
+        // Remove current popup
+        popup.remove();
+
+        // Show last stop div
+        $('#lastStop').show();
+
+        // Enable resume mode
+        window.setTimeout(function(){
+            $('#lastStop').css('margin-left', '-450px');
+            toggleResumeMode();
+            $('.onoffswitch').show();
+        }, 4000);
+
+    }
+
+    else {
+
+    var nextStop = findNextTourStop(currentTourStop);
+
+    fly(nextStop);
+    // scrollToFeature(nextStop);
+    }
+
+    // Update progress bar
+    updateProgress(currentTourStop);
+
+});
+
 $(document).on('click', '.previousButton', function() {
+    currentTourStop--;
 
     // If the previous stop is the welcome window
-    if (currentTourStop - 1 === 0) {
+    if (currentTourStop === 0) {
         // Close the current popup
         popup.remove();
 
@@ -282,14 +293,15 @@ $(document).on('click', '.previousButton', function() {
 
     }
     else {
-        var previousStop = findNextTourStop(currentTourStop - 1);
+        var previousStop = findNextTourStop(currentTourStop);
         fly(previousStop);
 
-        currentTourStop--;
+        
     }
 
     // If user clicks back button on last stop, after resume mode has automatically been activated
     if (currentTourStop == 8) {
+
         // Toggle back to tour mode
         toggleResumeMode();
     }
@@ -302,11 +314,20 @@ $('#startTourButton').on('click', function() {
     $('#welcome').hide();
 });
 
+// Hide end of tour window
+$('#endTourButton').on('click', function() {
+    $('#lastStop').hide();
+});
+
 
 // Define waypoints to trigger flying to resume items when they appear on screen
 var waypointsDown = $('.resume-item').waypoint(function(direction) {
 
     if (direction == 'down') {
+
+        // Close lastStop on tour if it's still open
+        $('#lastStop').hide();
+
         // Set current element to active
         setActive(this.element);
 
@@ -324,6 +345,9 @@ var waypointsDown = $('.resume-item').waypoint(function(direction) {
 var waypointsUp = $('.resume-item').waypoint(function(direction) {
 
     if (direction == 'up') {
+        // Close lastStop on tour if it's still open
+        $('#lastStop').hide();
+        
        // Set current element to active
        setActive(this.element);
 
@@ -334,7 +358,9 @@ var waypointsUp = $('.resume-item').waypoint(function(direction) {
         fly(markerMatch);
 
     }}, {
-            offset: '29%',
+            // Set offset to only 5% on mobile, otherwise 29%
+            // Note: I believe his only happens once, so it will be set according to initial screen size
+            offset: (isMobile) ? '5%' : '29%',
             context: $('#features')
 });
 
@@ -352,7 +378,7 @@ function scrollToFeature(feature) {
 
     $('#features').scrollTo($(resumeItemId), 800, {
         offset: function() {
-            var topOffset = -0.20 * $(window).height();
+            var topOffset = -0.30 * $(window).height();
             return {top: topOffset};
         },
         onAfter: function() {
@@ -367,8 +393,9 @@ function openPopup(marker) {
     // HTML for buttons on to add to popup content on tours
     var previousButtonHTML = '<button type=\"button\" class=\"previousButton\">Previous</button>';
     var nextButtonHTML = '<button type=\"button\" class=\"nextButton\">Next</button></div>';
-    var restartTourButtonHTML = '<button type=\"button\"class=\"previousButton\">Restart Tour</button>';
-    
+    // var restartTourButtonHTML = '<button type=\"button\"class=\"previousButton\">Restart Tour</button>';
+    popup.remove();
+
     // If the marker is not a cluster
     if (!marker.properties.cluster) {
 
@@ -376,15 +403,22 @@ function openPopup(marker) {
             content = marker.properties.description;
         }
         else if (currentTourStop == 9) {
-            content = marker.properties.description + restartTourButtonHTML;
+            // Show the last stop div
+            $('#lastStop').show();
         }
         else {
             content = marker.properties.description + previousButtonHTML + nextButtonHTML;
         }
 
-    popup.setLngLat(marker.geometry.coordinates)
-    .setHTML(content)
-    .addTo(map);
+        popup.setLngLat(marker.geometry.coordinates)
+        .setHTML(content);
+
+        // At end of flyTo animation
+        map.once('moveend', function(){
+            // Hide airplane and reset it to face east
+            $('#airplane').removeClass('visible west');
+            popup.addTo(map);
+        });
     }
 }
 
@@ -421,17 +455,35 @@ function fly(markerMatch) {
     map.flyTo({
         center: markerMatch.geometry.coordinates,
         zoom: 13.5,
-        pitch: 20
+        pitch: 20,
+        offset: (resumeMode) ? [-225, 200] : [0,200]
     });
 
-    // // At end of flyTo animation
-    // map.once('moveend', function(){
-    //     // Open the associated popup
-    //     openPopup(markerMatch);
-    // });
-
-    openPopup(markerMatch);
+      // If it's not resume mode on mobile
+      if (!(isMobile && resumeMode)) {
+        // And if it's not resume mode at all
+        if (!resumeMode) {
+            // Show airplane
+            showAirplane(markerMatch);
+        }
+        // Open the popup
+        openPopup(markerMatch);
+        }
     
+}
+
+function showAirplane(markerMatch) {
+    
+    var currentLng = map.getCenter().lng;
+ 
+    var nextLng = markerMatch.geometry.coordinates[0];
+    
+    // if next lng is less than current lng, add class west so airplane faces west
+    if (nextLng < currentLng) {
+        $('#airplane').addClass('west');
+    }
+    // Show airplane
+    $('#airplane').addClass('visible');
 }
 
 function startTour() {
@@ -456,6 +508,12 @@ function enableResumeMode() {
 
     // Close welcome window if it's open
     $('#welcome').hide();
+
+    // Zoom out to the original map zoom level and center
+    map.flyTo({
+        center: [-98.613, 40],
+        zoom: 3
+    });
 
     // Show resume sidebar and scroll to the top
     $('#features').addClass('visible');
@@ -506,6 +564,7 @@ function toggleResumeMode(){
     else {
         enableTourMode();
         $('#myonoffswitch').prop("checked", true);
+        $('.progress').show();
     }
 }
 
@@ -540,48 +599,24 @@ $(document).ready( function () {
 
 
     // Easter egg
-    var msg = "Hi\r\n" +
-            "                          ,,,,   \r\n" +
-            "                   ,,,           ,,,      \r\n" +
-            "                ,,                  ,,    \r\n" +
-            "              ,                        ,   \r\n" +
-            "             ,,                        ,,  \r\n" +
-            "            ,                            ,  \r\n" +
-            "            ,                            ,  \r\n" +
-            "            ,                            ,  \r\n" +
-            "            ,,                          ,,  \r\n" +
-            "            ,,                          ,,   \r\n" +
-            "             ,,                        ,,    \r\n" +
-            "              ,,                      ,,     \r\n" +
-            "               ,,,                  ,,,      \r\n" +
-            "           ,,,,,,,,,             ,,,,,     \r\n" +
-            "       ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,     \r\n" +
-            "     ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~    \r\n" +
-            "    ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~   \r\n" +
-            "   ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
-            "  ,,,,,,,      ,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
-            " ,,,,,,,      =,:::::::::,,,,,,,,,,,,,~~~  \r\n" +
-            " ,,,,,,      =::::::::::::::,,,,,,,,,,~~~  \r\n" +
-            " ,,,,,,     =:::::::::::::::::,,,,,,,,~~~  \r\n" +
-            " ,,,,,     =:::::::::::::::::::,,,,,,,~~~  \r\n" +
-            " ,,,,,,  ==:::::::?IIIII77777III,,,,,,~~~  \r\n" +
-            " :,,,,,,,==:::::?I$$$$$$$$$$$$$$$,,,,,~~~  \r\n" +
-            "  :,,,,,,,,:::::I$$$$$$$$$$$$$$$$,,,,,~~~  \r\n" +
-            "   ,:,,,,,,,I?++I$$$$$$$$$$$$$$$$,,,,,~~~  \r\n" +
-            "    ::,,,,,II++++++$$$$$$$$$$$$$$~,,,,~~~  \r\n" +
-            "      ::,,,I++++++++$$$$$$$$$$$$$,,,,,~~~  \r\n" +
-            "         ::I++++++++$$$$$$$$$$$$$,,,,,~~~  \r\n" +
-            "          ==I+++++++$$$$$$$$$$$$$,,,,,~~~  \r\n" +
-            "           ====:::::IIIIIIIIIII~,,,,,,~~~  \r\n" +
-            "            ====:::::::::::::::,,,,,,,~~~  \r\n" +
-            "              ===:::::::::::::,,,,,,,,~~~  \r\n" +
-            "              =IIII+::::~IIII,,,,,,,,,~~~  \r\n" +
-            "              ======,,,,,,,,,,,,,,,,,,~~~  \r\n" +
-            "              ,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
-            "              ,,,,,,,,,,,,,,,,,,,,,,,,~~~  \r\n" +
-            "              ,,,,,,,,,,,,,,,,,,,,,,,,~~~  " ;
+    console.log("%cHello!\n  |  .  .   .  *     .  .        . .   *\r\n" +
+"%c -0-       _..._    *    .   .      .   \r\n" +
+"%c  |   .  .'     '. .    _        .     .\r\n" +
+"%c .      /    .-\"\"-\\   _/ \\    .  *      \r\n" +
+"%c   *  .-|   /:a  a|  |   |    .         \r\n" +
+"%c.   . |  \\  |:    /.-'-./  . |   .  .    \r\n" +
+"%c      | .-'-;:__.'    =/    -0- .     .\r\n" +
+"%c*     .'=  *=|     _.='   .  |          \r\n" +
+"%c  .  /   _.  |    ;    .   .    *  .  .  \r\n" +
+"%c    ;-.-'|    \\   | .   .    .  .     .   \r\n" +
+"%c.  /   | \\    _\\  _\\       .-o--.       \r\n" +
+"%c   \\__/'._;.  ==' ==\\  .  :O o O :  .   \r\n" +
+"%c  .    .    \\    \\   |    : O. Oo;    . \r\n" +
+"%c*    .    . /    /   /   . `-.O-\'   *   \r\n" +
+"%c  .    |    /-._/-._/  .          .  .  \r\n" +
+"%c      -0-   \\   `\\  \\     * .           \r\n" +
+"%c.    . |   * `-._/._/  .   .   .    . .  \r\n",'color:#ff0000','color:#ff4000','color:#ff8000','color:#ffbf00','color:#ffff00','color:#bfff00','color:#00ff00','color:#00ffbf','color:#00ffff','color:#00bfff','color:#0080ff','color:#0000ff','color:#4000ff','color:#8000ff','color:#bf00ff','color:#ff00ff','color:#ff00bf');
 
-    console.log(msg);
 });
 
 

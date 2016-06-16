@@ -13,21 +13,21 @@
         <link href="https://fonts.googleapis.com/css?family=Special+Elite|Averia+Serif+Libre:400,700" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="styles.css">
 
-        <!-- Google analytics -->
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-76150170-1', 'auto');
+          ga('create', 'UA-76154066-1', 'auto');
           ga('send', 'pageview');
 
         </script>
     </head>
     <body>
-        <div id="map">
 
+        <div id="map">
+            <img id="airplane" src="img/airplane.svg">
             <div class="onoffswitch" title="Toggle between Tour Mode and Resume Mode">
                 <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
                 <label class="onoffswitch-label" for="myonoffswitch">
@@ -38,12 +38,21 @@
 
             <div id="welcome" class="floating">
 
-                <h3>Hi Mapbox!</h3>
+                <h3>Welcome!</h3>
 
-                <p>I’m a tinkerer, quick learner, and map enthusiast, and I would be thrilled to join the Mapbox engineering team. Coming from the nonprofit industry and experience in grassroots movements, I am passionate about open source software and maps as powerful tools to make the world a better place. With a mostly self-taught background and non-traditional path to software engineering, I have developed a knack for tinkering and a figure-it-out attitude. I can't wait to work on creative solutions for dealing with large datasets and diverse use cases at Mapbox.</p>
-                <p>This map cover letter and resume will take you through my journey to becoming a software engineer and map-lover.</p>
+                <p>I’m a tinkerer, quick learner, and map enthusiast. Coming from the nonprofit industry and experience in grassroots movements, I am passionate about software and maps as powerful tools to make the world a better place. With a non-traditional path to software engineering, I have developed a figure-it-out attitude and the ability to pick up new technologies rapidly. I can't wait to work on creative solutions to interesting technical challenges.</p>
+                <p>This map cover letter and resume will take you through my journey to becoming a software engineer.</p>
                 <button type="button" class="tour-button nextButton" id="startTourButton">Start tour</button>
             </div>
+
+              <div id="lastStop" class="floating">
+
+                <h3>...Your company!</h3>
+
+                <p>My experience figuring out how to solve technical problems on the job in the nonprofit world, combined with the full stack software engineering skills I've learned through Hackbright and self study, would make me a valuable addition to any team. I can't wait to work on finding creative solutions to interesting technical challenges.</p>
+                <button type="button" class="tour-button" id="endTourButton">Close and explore resume</button>
+            </div>
+
 
             <div class="progress outer-progress">
                 <div class="progress inner-progress"></div>
@@ -61,7 +70,9 @@
             <section class="resume-intro">
                     <h3>Tech Skills</h3> 
                     <b>Technologies: </b> <br>
-                    Python, JavaScript, HTML, CSS, SQL, Flask, Jinja, Git <br>
+                    Python, JavaScript, HTML, CSS, SQL, Flask, Postgres, jQuery, Bootstrap, Mapbox, Git<br>
+                    <b>Concepts:</b><br>
+                    Object-Oriented Programming, Testing, REST APIs, Relational databases, Agile methodologies<br>
                     <b>Mapping/Design: </b> <br>
                     GIS (arcGIS), Remote Sensing (Erdas Imagine), Adobe CS
             </section>
@@ -133,7 +144,7 @@
                 <div id="contact">
                 <h3>Find me</h3>
                     <a href="https://github.com/Nmargolis" class="socialLink">
-                        <img src="img/stitch_github.png" alt="github" height="50" width="50">
+                        <img src="img/stitch_github.png" alt="github" title= height="50" width="50">
                     </a>
                      <a href="https://www.linkedin.com/in/nataliasmargolis" class="socialLink">
                         <img src="img/stitch_linked_in.png" alt="linkedin" height="50" width="50">
@@ -145,7 +156,8 @@
                         <img src="img/stitch_instagram.png" alt="instagram" height="50" width="50">
                     </a>
                 </div>
-                <p><a class="centered-link" href="https://github.com/Nmargolis/mapletter">Explore the code for this on github</a>.</p>
+                <p><a class="centered-link" href="natalia_margolis_resume.pdf">See resume as PDF</a></p>
+                <p><a class="centered-link" href="https://github.com/Nmargolis/story-resume">Explore the code for this on github</a>.</p>
 
             </section>               
             </div>
